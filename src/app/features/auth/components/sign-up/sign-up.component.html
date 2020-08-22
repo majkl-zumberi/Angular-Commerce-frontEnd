@@ -1,8 +1,8 @@
 <div class="h-screen flex">
 
-  <div class="relative flex">
+  <div class="w-full relative flex">
 
-    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <svg @slide viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
       <defs>
         <linearGradient id="myGradient" gradientTransform="rotate(90)">
           <stop offset="5%" stop-color="#8ec5fc" />
@@ -12,16 +12,25 @@
       <path d="M208.09,0.00 C152.70,67.10 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: url('#myGradient');"></path>
     </svg>
 
-    <div class="absolute top-0 p-8 flex justify-between  w-full items-center">
+    <div @fade class="absolute top-0 p-8 flex justify-between  w-full items-center">
       <h1 class="text-3xl text-indigo-900 uppercase font-bold">lillo.it</h1>
       <button class="border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium" routerLink="/auth/login">Accedi</button>
     </div>
-    <form class="absolute mezzo flex flex-col">
+    <form @fade class="absolute mezzo flex flex-col" [formGroup]="signUpForm" (ngSubmit)="signUpUser()">
       <h1 class="text-5xl text-indigo-600 font-bold">Registrati</h1>
-      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" placeholder="inserisci email">
-      <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="inserisci password">
-      <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="conferma password">
-      <button class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">Registrati</button>
+      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" placeholder="inserisci email" formControlName="email">
+      <div formGroupName="pswGroup" class="flex flex-col">
+        <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="inserisci password" formControlName="password">
+        <input [ngClass]="{'uk-form-danger':signUpForm.get('pswGroup').errors ||
+                        ((signUpForm.get('pswGroup.passwordCnf').touched ||
+                         signUpForm.get('pswGroup.passwordCnf').dirty) &&
+                         !signUpForm.get('pswGroup.passwordCnf').valid)}"
+               class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="conferma password" formControlName="passwordCnf">
+      </div>
+        <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mt-2" @fade role="alert" *ngIf="signUpForm.get('pswGroup').errors?.match">
+        <p>le password non coincidono</p>
+      </div>
+      <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="signUpForm.status === 'INVALID'">Registrati</button>
     </form>
 
   </div>
