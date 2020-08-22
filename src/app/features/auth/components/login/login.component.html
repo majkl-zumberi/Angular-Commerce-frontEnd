@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="h-screen flex">
+
+  <div class="relative flex">
+
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <defs>
+        <linearGradient id="myGradient" gradientTransform="rotate(90)">
+          <stop offset="5%" stop-color="#8ec5fc" />
+          <stop offset="95%" stop-color="#e0c3fc" />
+        </linearGradient>
+      </defs>
+      <path d="M208.09,0.00 C152.70,67.10 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: url('#myGradient');"></path>
+    </svg>
+
+    <div class="absolute top-0 p-8 flex justify-between  w-full items-center">
+      <h1 class="text-3xl text-indigo-900 uppercase font-bold">lillo.it</h1>
+      <button class="border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium" routerLink="/auth/sign-up">Registrati</button>
+    </div>
+    <form class="absolute mezzo flex flex-col">
+      <h1 class="text-5xl text-indigo-600 font-bold">Accedi</h1>
+      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" placeholder="inserisci email">
+      <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="inserisci password">
+      <button class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">Login</button>
+    </form>
+
+  </div>
+
+</div>
