@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable, Subscription} from 'rxjs';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {AuthFacadeService} from '../../services/auth-facade.service';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,6 @@ export class LoginComponent implements OnInit {
 
   loginError: string | null;
   loginForm: FormGroup;
-  private sub: Subscription;
   getState: Observable<any>;
 
   get usernameControl(): FormControl {
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service: AuthFacadeService) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -53,5 +53,6 @@ export class LoginComponent implements OnInit {
   loginUser() {
     console.log('username:' + this.usernameControl.value);
     console.log('password:' + this.passwordControl.value);
+    this.service.signIn(this.usernameControl.value, this.passwordControl.value);
   }
 }
