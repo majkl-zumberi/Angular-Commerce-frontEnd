@@ -3,20 +3,17 @@
     <nav class=" flex w-full p-6 bg-gray-100 bg-opacity-25 items-center">
       <!--sinistra-->
       <div class="w-1/3">
-        <ng-container *ngIf="currentRoute === '/cart' || currentRoute === '/customize' ">
-          <a class="w-40 flex justify-center items-end  text-gray-200 text-lg cursor-pointer">
-            <svg class="w-8" id="cart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                 viewBox="0 0 426.667 426.667" style="fill: white"
-                 xml:space="preserve">
+        <app-menu-link id="text-card" [menuTitle]="'Home'" [menuLink]="'/home'" [resize]="true" *ngIf="currentRoute === '/cart' || currentRoute === '/customize' ">
+          <svg class="w-8" id="cart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+               viewBox="0 0 426.667 426.667" style="fill: white"
+               xml:space="preserve">
           <g>
             <g>
               <polygon points="213.333,32 0,224 64,224 64,394.667 170.667,394.667 170.667,266.667 256,266.667 256,394.667 362.667,394.667
                 362.667,224 426.667,224 		"/>
             </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
           </svg>
-            <span class="text-gray-100">Home</span>
-          </a>
-        </ng-container>
+        </app-menu-link>
       </div>
 
       <!--mezzo-->
@@ -26,7 +23,7 @@
 
       <!--destra-->
       <div class="w-1/3 flex justify-end  relative shopping-cart z-20">
-        <a id="text-card" class="w-40 flex justify-end  text-gray-200 text-lg cursor-pointer">
+        <app-menu-link id="text-card" [menuTitle]="'Carrello (2)'" [menuLink]="'/cart'" [resize]="false">
           <svg id="cart" class="w-8 "  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 426.667 426.667" style="fill: white" xml:space="preserve">
           <g>
             <g>
@@ -37,26 +34,25 @@
               </g>
             </g>
           </g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
-          <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
         </svg>
-          <span>Carrello (2)</span>
-        </a>
+        </app-menu-link>
         <!--opacity-0 w-1/4 overflow-y-auto-->
-        <div class="shopping-cart-card absolute top-0 right-0 bg-white  p-8  shadow-lg h-64  hidden flex flex-col items-center justify-center w-full">
+        <div class="shopping-cart-card absolute top-0 right-0 bg-white  p-8  shadow-lg h-64  hidden flex flex-col items-center justify-center w-11/12">
 
           <div class="overflow-y-auto h-full w-full">
             <div class=" mt-16 flex  flex-col items-center border-b-2 border-purple-400  pb-4">
