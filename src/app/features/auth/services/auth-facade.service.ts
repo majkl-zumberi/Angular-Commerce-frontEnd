@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
 import {Store} from '@ngrx/store';
-import {loginUser} from '../../../redux/auth/auth.actions';
+import {loginUser, signUpUser} from '../../../redux/auth/auth.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,14 @@ export class AuthFacadeService {
   signIn(email: string, password: string) {
     console.log('ora delego allo ngrx store');
     this.store.dispatch(loginUser({
+      email,
+      password
+    }));
+  }
+
+  signUp(email: string, password: string) {
+    console.log('pronto per la registrazione');
+    this.store.dispatch(signUpUser({
       email,
       password
     }));
