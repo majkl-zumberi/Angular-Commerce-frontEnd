@@ -7,10 +7,8 @@ import { Router, NavigationEnd , Event } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  currentRoute: string;
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  currentRoute = '';
+  constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         console.log(event.url);
@@ -21,6 +19,9 @@ export class MenuComponent implements OnInit {
       // NavigationError
       // RoutesRecognized
     });
+  }
+
+  ngOnInit(): void {
   }
 
 }
