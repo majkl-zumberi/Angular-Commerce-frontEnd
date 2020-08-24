@@ -1,0 +1,36 @@
+.gradient{
+  background: rgb(122,210,248);
+  background: linear-gradient(90deg, rgba(122,210,248,1) 24%, rgba(194,129,254,1) 84%);
+}
+
+.shopping-cart:hover .shopping-cart-card {
+  display: block;
+  height:40vh;
+  margin: -1.86rem;
+
+  transition: visibility 0s linear 0s, opacity 1s;
+}
+.shopping-cart:hover{
+  a{
+    background-color:white;
+    width:80%!important;
+    border-bottom-width: 8px;
+    border-color: #fff;
+  }
+  #text-card{
+    color:#c380fe;
+    z-index:99;
+  }
+  #cart{
+    fill:#c380fe !important;
+  }
+
+}
+
+p span {
+
+  padding-left:1rem;
+}
+#cart{
+  margin-right: 1rem;
+}
