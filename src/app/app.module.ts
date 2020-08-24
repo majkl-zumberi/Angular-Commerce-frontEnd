@@ -15,11 +15,13 @@ import {authEffects} from './redux/auth/auth.effects';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor} from './core/services/auth.interceptor';
 import { MenuComponent } from './components/menu/menu.component';
+import { MenuLinkComponent } from './components/menu-link/menu-link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    MenuLinkComponent
   ],
   imports: [
     BrowserModule,
