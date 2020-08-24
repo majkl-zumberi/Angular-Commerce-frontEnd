@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable, Subscription} from 'rxjs';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {AuthFacadeService} from '../../services/auth-facade.service';
+import {Store} from '@ngrx/store';
+import {selectUserState} from '../../../../redux';
 
 @Component({
   selector: 'app-login',
@@ -26,11 +28,12 @@ import {AuthFacadeService} from '../../services/auth-facade.service';
     ])
   ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   loginError: string | null;
   loginForm: FormGroup;
   getState: Observable<any>;
+  private sub: Subscription;
 
   get usernameControl(): FormControl {
     return this.loginForm.get('username') as FormControl;
@@ -40,14 +43,18 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private fb: FormBuilder, private service: AuthFacadeService) {
+  constructor(private fb: FormBuilder, private service: AuthFacadeService, private store: Store) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+    this.getState = this.store.select(selectUserState);
   }
 
   ngOnInit(): void {
+    this.sub = this.getState.subscribe((state) => {
+      this.loginError = state.errorMessage;
+    });
   }
 
   loginUser() {
@@ -55,4 +62,9 @@ export class LoginComponent implements OnInit {
     console.log('password:' + this.passwordControl.value);
     this.service.signIn(this.usernameControl.value, this.passwordControl.value);
   }
+
+  ngOnDestroy(): void {
+    typeof this.sub !== 'undefined' && (this.sub.unsubscribe());
+  }
+
 }
