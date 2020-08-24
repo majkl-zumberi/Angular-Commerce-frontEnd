@@ -12,6 +12,8 @@ import {EffectsModule} from '@ngrx/effects';
 import {environment} from '../environments/environment';
 import {reducers} from './redux';
 import {authEffects} from './redux/auth/auth.effects';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {AuthInterceptor} from './core/services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,13 @@ import {authEffects} from './redux/auth/auth.effects';
     }),
     StoreRouterConnectingModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
