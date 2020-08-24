@@ -5,36 +5,87 @@ import { Observable, of } from 'rxjs';
 import * as authActions from './auth.actions';
 import {switchMap, map, tap, catchError} from 'rxjs/operators';
 import { User } from 'src/app/core/model/user.interface';
-import { Router } from '@angular/router';
 import {AuthResponse} from '../../core/model/auth.interface';
 import * as AuthActions from '../../redux/auth/auth.actions';
+import * as jwt_decode from 'jwt-decode';
+
 @Injectable()
 // tslint:disable-next-line:class-name
 export class authEffects {
-  constructor(private action$: Actions, private http: HttpCommunicationsService, private router: Router) {}
+  constructor(private action$: Actions, private http: HttpCommunicationsService) {}
 
   loginUser$ = createEffect(() => this.action$.pipe(
     ofType(AuthActions.loginUser),
     switchMap(action => this.signInUser(action.email, action.password).pipe(
-      tap((response: AuthResponse) => console.log('è arrivata la response' + response)),
+      // tap((response: AuthResponse) => console.log('è arrivata la response' + response)),
       catchError(err => {
-        console.log('dioccaro errore durante il login');
-        console.log(err);
         return of({
           error : err.error?.message,
           status: err.status
         } as AuthResponse);
       }),
       map((response: AuthResponse) => {
-        if (response.status !== 200 && response.status !== 201) {
-        return AuthActions.loginUserFailure({error: response.error});
+        console.log(response);
+        if (!response.token) {
+          return AuthActions.loginUserFailure({error: response.error});
+        } else {
+          return AuthActions.loginUserSuccess({token: response.token});
         }
-      }),
+      })
     ))
 
   ));
 
+  loginUserSuccess$ = createEffect(() => this.action$.pipe(
+    ofType(AuthActions.loginUserSuccess),
+    // tap((action) => console.log( 'il token! user success: ' + action.token)),
+    tap(action => {
+      console.log('salvo utente in sessione da auth.effects');
+      localStorage.setItem('token', action.token);
+    }),
+    map( (action) => {
+      const decoded = jwt_decode(action.token) as User;
+      sessionStorage.setItem('utente', JSON.stringify(decoded));
+      return authActions.initUser({ user: decoded });
+    }),
+  ));
+
+  signUpUser$ = createEffect(() => this.action$.pipe(
+    ofType(AuthActions.signUpUser),
+    switchMap(action => this.signUpUser(action.email, action.password).pipe(
+      catchError(err => {
+        return of({
+          error : err.error?.message,
+          status: err.status
+        } as AuthResponse);
+      }),
+      map((response: AuthResponse) => {
+        if (!response.token) {
+          return AuthActions.signUpUserFailure({ error: response.error});
+        } else {
+          return AuthActions.signUpUserSuccess({token: response.token});
+        }
+      })
+    ))
+  ));
+
+  signUpUserSuccess$ = createEffect(() => this.action$.pipe(
+    ofType(AuthActions.signUpUserSuccess),
+    tap(action => {
+       localStorage.setItem('token', action.token);
+    }),
+    map( (action) => {
+      const decoded = jwt_decode(action.token) as User;
+      sessionStorage.setItem('utente', JSON.stringify(decoded));
+      return authActions.initUser({ user: decoded });
+    }),
+  ));
+
   signInUser(email: string, password: string): Observable<AuthResponse> {
-    return this.http.retrievePostCall<AuthResponse>('users/signIn', {email, password});
+    return this.http.retrievePostCall<AuthResponse>('api/users/signIn', {email, password});
+  }
+
+  signUpUser(email: string, password: string): Observable<AuthResponse> {
+    return this.http.retrievePostCall<AuthResponse>('api/users/signUp', {email, password, firstName: '', lastName: ''});
   }
 }
