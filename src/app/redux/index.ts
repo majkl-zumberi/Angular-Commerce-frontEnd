@@ -1,16 +1,20 @@
 import {authReducer, UserState} from './auth/auth.reducers';
 import {getSelectors, routerReducer, RouterReducerState} from '@ngrx/router-store';
-import {ActionReducerMap, createFeatureSelector} from '@ngrx/store';
+import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
+import {clothesReducer, ClothesState} from './clothes/clothes.reducers';
 
 export interface AppState {
   authState: UserState;
+  clothesState: ClothesState;
   router: RouterReducerState<any>;
 }
 export const reducers: ActionReducerMap<AppState> = {
   authState: authReducer,
+  clothesState: clothesReducer,
   router: routerReducer
 };
 
+export const selectClotheState = (state: AppState) => state.clothesState;
 export const selectUserState = (state: AppState) => state.authState;
 export const selectRouter = createFeatureSelector<
   AppState,
@@ -26,3 +30,8 @@ export const {
   selectRouteData,      // select the current route data
   selectUrl,            // select the current url
 } = getSelectors(selectRouter);
+
+export const selectClothes = createSelector(
+  selectClotheState,
+  (state: ClothesState) => state.clothes
+);
