@@ -1,0 +1,18 @@
+<div class="{{dress?._id}} glide" id="{{dress?._id}}">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <ng-container *ngFor="let imageLink of dress.links">
+        <li class="glide__slide"><img [src]="imageLink.link" [alt]="dress.name"></li>
+      </ng-container>
+     </ul>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <ng-container *ngFor="let link of dress.links; let indice=index">
+      <button class="glide__bullet" [attr.data-glide-dir]="'='+indice"></button>
+    </ng-container>
+  </div>
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+  </div>
+</div>
