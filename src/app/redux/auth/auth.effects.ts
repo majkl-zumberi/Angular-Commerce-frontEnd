@@ -82,10 +82,10 @@ export class authEffects {
   ));
 
   signInUser(email: string, password: string): Observable<AuthResponse> {
-    return this.http.retrievePostCall<AuthResponse>('api/users/signIn', {email, password});
+    return this.http.retrievePostCall<AuthResponse>('users/signIn', {email, password});
   }
 
   signUpUser(email: string, password: string): Observable<AuthResponse> {
-    return this.http.retrievePostCall<AuthResponse>('api/users/signUp', {email, password, firstName: '', lastName: ''});
+    return this.http.retrievePostCall<AuthResponse>('users/signUp', {email, password, firstName: '', lastName: ''});
   }
 }
