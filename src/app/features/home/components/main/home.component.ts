@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DressImageLink} from '../../../../core/model/dressImageLink.interface';
 import {Dress} from '../../../../core/model/dress.interface';
 import {Store, select} from '@ngrx/store';
 import {retrieveAllClothes} from '../../../../redux/clothes/clothes.actions';
@@ -14,7 +13,6 @@ import {ClothesFacadeService} from '../services/clothes-facade.service';
 export class HomeComponent implements OnInit {
 
   dress: Dress;
-  links: DressImageLink[];
 
   get clothesList(): Observable<Dress[]> {
     return this.store.pipe(select(selectClothes));
