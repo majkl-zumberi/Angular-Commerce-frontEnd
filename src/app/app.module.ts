@@ -16,6 +16,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor} from './core/services/auth.interceptor';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuLinkComponent } from './components/menu-link/menu-link.component';
+import { clothesEffects } from './redux/clothes/clothes.effects';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MenuLinkComponent } from './components/menu-link/menu-link.component';
     AppRoutingModule,
     CoreModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([authEffects]),
+    EffectsModule.forRoot([authEffects, clothesEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
