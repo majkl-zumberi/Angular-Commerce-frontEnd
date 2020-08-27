@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import Glide from '@glidejs/glide';
 import {Dress} from '../../../core/model/dress.interface';
 @Component({
@@ -8,6 +8,8 @@ import {Dress} from '../../../core/model/dress.interface';
 })
 export class DressPreviewComponent implements OnInit, AfterViewInit {
 
+  @Output()
+  detailEvent: EventEmitter<void> = new EventEmitter();
   @Input()
   dress: Dress;
   constructor() { }
@@ -18,9 +20,13 @@ export class DressPreviewComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log('sono in after view init');
-    const dressSelector = document.querySelector('.' + this.dress._id);
+    // const dressSelector = document.querySelector('.' + this.dress._id);
+    const dressSelector = document.getElementById(this.dress._id);
     console.log(dressSelector);
     new Glide(dressSelector).mount();
   }
 
+  emitDetail() {
+    this.detailEvent.emit();
+  }
 }
