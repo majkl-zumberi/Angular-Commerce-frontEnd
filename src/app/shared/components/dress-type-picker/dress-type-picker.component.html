@@ -1,0 +1,11 @@
+<div>
+  <span
+    *ngFor="let type of dressTypes"
+    class="type-dress p-4 mr-3 hover:text-purple-500  border-b-4 border-transparent text-gray-500 "
+    [style.opacity]="opacity"
+    [style.pointer-events]="opacity === 1 ? 'auto' : 'none'"
+    [ngClass]="{ 'text-purple-500 border-purple-500 transition ease-in duration-700': value === type }"
+    (click)="changeColor(type)"
+    [innerText]="type"
+  ></span>
+</div>
