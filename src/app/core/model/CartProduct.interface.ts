@@ -6,4 +6,5 @@ export interface CartProduct {
   customText: string;
   textColor: string;
   currentImage: string;
+  dressType: string;
 }
