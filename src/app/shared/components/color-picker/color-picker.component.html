@@ -1,0 +1,11 @@
+<div>
+  <span
+    *ngFor="let color of colors"
+    class="color-cell rounded-full mr-3 hover:border-purple-500 border-2 border-transparent shadow-lg "
+    [style.backgroundColor]="color"
+    [style.opacity]="opacity"
+    [style.pointer-events]="opacity === 1 ? 'auto' : 'none'"
+    [ngClass]="{ 'border-purple-500': value === color }"
+    (click)="changeColor(color)"
+  ></span>
+</div>
