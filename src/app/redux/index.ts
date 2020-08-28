@@ -3,20 +3,24 @@ import {getSelectors, routerReducer, RouterReducerState} from '@ngrx/router-stor
 import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
 import {clothesReducer, ClothesState} from './clothes/clothes.reducers';
 import {Params} from '@angular/router';
+import {cartReducer, CartState} from './cart/cart.reducers';
 
 export interface AppState {
   authState: UserState;
   clothesState: ClothesState;
   router: RouterReducerState<any>;
+  shoppingCartState: CartState;
 }
 export const reducers: ActionReducerMap<AppState> = {
   authState: authReducer,
   clothesState: clothesReducer,
-  router: routerReducer
+  router: routerReducer,
+  shoppingCartState: cartReducer
 };
 
 export const selectClotheState = (state: AppState) => state.clothesState;
 export const selectUserState = (state: AppState) => state.authState;
+export const selectShoppingCartState = (state: AppState) => state.shoppingCartState;
 export const selectRouter = createFeatureSelector<
   AppState,
   RouterReducerState<any>
