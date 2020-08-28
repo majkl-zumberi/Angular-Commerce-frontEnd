@@ -1,0 +1,12 @@
+img{
+  width: 20vw!important;
+  max-height: 55vh!important;
+}
+.right-side{
+  justify-content: space-around;
+}
+form{
+  button:disabled{
+    opacity: 0.3;
+  }
+}
