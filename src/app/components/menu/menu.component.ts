@@ -9,6 +9,10 @@ export class MenuComponent implements OnInit {
 
   currentRoute = '';
   constructor(private router: Router) {
+    // override the route reuse strategy
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+      return false;
+    }
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         console.log(event.url);
