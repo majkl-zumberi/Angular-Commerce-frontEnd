@@ -1,0 +1,14 @@
+<div>
+  <pre>{{clothe| async | json}}</pre>
+  <form [formGroup]="customizeForm" (ngSubmit)="addToCart()">
+
+  <app-color-picker [colors]="['red', 'orange', 'yellow', 'green', 'lightblue', 'blue']" formControlName="color"></app-color-picker>
+    <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="customizeForm.status === 'INVALID'">aggiungi al carrello</button>
+  </form>
+  <pre>
+    {{ customizeForm.value | json}}
+    dirty: {{customizeForm.dirty}} <br>
+    touched: {{customizeForm.touched}}
+
+  </pre>
+</div>
