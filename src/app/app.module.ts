@@ -17,6 +17,7 @@ import {AuthInterceptor} from './core/services/auth.interceptor';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuLinkComponent } from './components/menu-link/menu-link.component';
 import { clothesEffects } from './redux/clothes/clothes.effects';
+import {SessionInterceptor} from './core/services/session.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,11 @@ import { clothesEffects } from './redux/clothes/clothes.effects';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SessionInterceptor,
       multi: true
     }
   ],
