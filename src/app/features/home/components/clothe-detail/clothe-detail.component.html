@@ -1,14 +1,28 @@
-<div>
-  <pre>{{clothe| async | json}}</pre>
-  <form [formGroup]="customizeForm" (ngSubmit)="addToCart()">
-
-  <app-color-picker [colors]="['red', 'orange', 'yellow', 'green', 'lightblue', 'blue']" formControlName="color"></app-color-picker>
-    <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="customizeForm.status === 'INVALID'">aggiungi al carrello</button>
-  </form>
-  <pre>
-    {{ customizeForm.value | json}}
-    dirty: {{customizeForm.dirty}} <br>
-    touched: {{customizeForm.touched}}
-
-  </pre>
+<div class="flex flex-col items-center">
+  <div class="-mt-20 w-1/2 shadow-lg p-2 pb-3 bg-white">
+    <form [formGroup]="customizeForm" (ngSubmit)="addToCart()">
+        <div class="flex w-full">
+          <img [src]="image" alt="product-image">
+          <div class="flex flex-col p-4 right-side">
+            <div>
+              <label class="font-bold mb-2" for="productColor">Colore prodotto</label>
+              <app-color-picker id="productColor" [colors]="['red', 'orange', 'yellow', 'green', 'lightblue', 'blue']" formControlName="productColor"></app-color-picker>
+            </div>
+            <div>
+              <label class="font-bold mb-2" for="customText">Testo personalizzato</label>
+              <input id="customText" type="text" class="w-full bg-gray-200 py-2 px-4 placeholder-gray-700" placeholder='inserisci testo' formControlName="customText" />
+            </div>
+            <div>
+              <label class="font-bold mb-2" for="customTextColor">Colore prodotto</label>
+              <app-color-picker id="customTextColor" [colors]="['white','black']" formControlName="textColor"></app-color-picker>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" (click)="resetForm()" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">ripristina</button>
+          <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="customizeForm.status === 'INVALID'">aggiungi al carrello</button>
+        </div>
+    </form>
+  </div>
 </div>
+<div #parent></div>
