@@ -2,6 +2,7 @@ import {authReducer, UserState} from './auth/auth.reducers';
 import {getSelectors, routerReducer, RouterReducerState} from '@ngrx/router-store';
 import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
 import {clothesReducer, ClothesState} from './clothes/clothes.reducers';
+import {Params} from '@angular/router';
 
 export interface AppState {
   authState: UserState;
@@ -34,4 +35,10 @@ export const {
 export const selectClothes = createSelector(
   selectClotheState,
   (state: ClothesState) => state.clothes
+);
+
+export const getCurrentNavigatedClothe = createSelector(
+  selectClotheState,
+  selectRouteParams,
+  (state: ClothesState, params: Params) => state.clothes.find(item => item._id === params.id)
 );
