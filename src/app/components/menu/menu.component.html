@@ -3,7 +3,7 @@
     <nav class=" flex w-full p-6 bg-gray-100 bg-opacity-25 items-center">
       <!--sinistra-->
       <div class="w-1/3">
-        <app-menu-link id="text-card" [menuTitle]="'Home'" [menuLink]="'/home'" [resize]="true" *ngIf="currentRoute === '/cart' || currentRoute === '/customize' ">
+        <app-menu-link id="text-card" [menuTitle]="'Home'" [menuLink]="'/home/clothes'" [resize]="true" *ngIf="currentRoute !== '/home/clothes' ">
           <svg class="w-8" id="cart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                viewBox="0 0 426.667 426.667" style="fill: white"
                xml:space="preserve">
