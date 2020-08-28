@@ -35,7 +35,7 @@ export class ClotheDetailComponent implements OnInit {
       customText: [''],
       textColor: [''],
       currentImage: [''],
-
+      dressType: ['', Validators.required]
     });
      this.customizeForm.get('customText').valueChanges.subscribe(text => {
       console.log(text);
@@ -77,7 +77,8 @@ export class ClotheDetailComponent implements OnInit {
     this.customizeForm.patchValue({
       productColor: '',
       customText: '',
-      textColor: ''
+      textColor: '',
+      dressType: ''
     });
     this.customizeForm.reset();
     this.customizeForm.get('textColor').disable();
