@@ -41,6 +41,16 @@ export const selectClothes = createSelector(
   (state: ClothesState) => state.clothes
 );
 
+export const getSizeCart = createSelector (
+  selectShoppingCartState,
+  (state: CartState) => state.cart.length
+);
+
+export const getCartProducts = createSelector(
+  selectShoppingCartState,
+  (state: CartState) => state.cart
+);
+
 export const getCurrentNavigatedClothe = createSelector(
   selectClotheState,
   selectRouteParams,
