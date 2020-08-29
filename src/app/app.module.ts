@@ -18,12 +18,16 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MenuLinkComponent } from './components/menu-link/menu-link.component';
 import { clothesEffects } from './redux/clothes/clothes.effects';
 import {SessionInterceptor} from './core/services/session.interceptor';
+import { CartComponent } from './components/cart/cart.component';
+import { CartProductItemComponent } from './components/cart-product-item/cart-product-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    MenuLinkComponent
+    MenuLinkComponent,
+    CartComponent,
+    CartProductItemComponent
   ],
   imports: [
     BrowserModule,
