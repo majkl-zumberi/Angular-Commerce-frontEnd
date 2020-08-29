@@ -1,1 +1,69 @@
-<p>first-step works!</p>
+<div  class="flex flex-col items-center w-full">
+  <div class="-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container">
+    <div class="border-b-2 border-purple-300 pb-3 flex justify-between">
+      <img src="https://images.unsplash.com/photo-1597456926132-e446175cd707" />
+      <div class="flex flex-col items-between justify-around">
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Colore
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Testo
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Colore Testo
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+      </div>
+
+      <div class="flex flex-col items-between justify-between pt-3">
+        <p class="font-bold text-purple-500">&euro; 15</p>
+        <button class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">rimuovi</button>
+      </div>
+    </div>
+    <div class="mt-3 border-b-2 border-purple-300 pb-3 flex justify-between">
+      <img src="https://images.unsplash.com/photo-1597456926132-e446175cd707" />
+      <div class="flex flex-col items-between justify-around">
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+      </div>
+
+      <div class="flex flex-col items-between justify-between pt-3">
+        <p class="font-bold text-purple-500">&euro; 15</p>
+        <button class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">rimuovi</button>
+      </div>
+    </div>
+    <div class="mt-3 border-b-2 border-purple-300 pb-3 flex justify-between">
+      <img src="https://images.unsplash.com/photo-1597456926132-e446175cd707" />
+      <div class="flex flex-col items-between justify-around">
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+        <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
+          <span class="font-bold text-left flex ">t-shirt</span></p>
+      </div>
+
+      <div class="flex flex-col items-between justify-between pt-3">
+        <p class="font-bold text-purple-500">&euro; 15</p>
+        <button class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">rimuovi</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3">
+    <p class="uppercase font-thin text-center text-gray-800 work-sans leading-normal text-base tracking-normal">Totale <span class="font-bold text-purple-500">&euro; 30</span></p>
+
+    <ul>
+      <li class="active"></li>
+      <li [routerLink]="'/cart/second-step'"></li>
+      <li></li></ul>
+
+    <button [routerLink]="'/cart/second-step'" type="button" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10">prosegui</button>
+  </div>
+</div>
