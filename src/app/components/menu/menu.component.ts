@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd , Event } from '@angular/router';
+import {Router, NavigationEnd, Event, RouterOutlet} from '@angular/router';
+import {slider} from '../../core/animations/slider';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
+  animations: [
+    slider
+  ]
 })
 export class MenuComponent implements OnInit {
 
@@ -27,5 +31,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
 }
