@@ -81,6 +81,17 @@ export class authEffects {
     }),
   ));
 
+  updateUser$ = createEffect(() => this.action$.pipe(
+    ofType(AuthActions.editUser),
+    tap(action => {
+      const actualUserInfo = JSON.parse(sessionStorage.getItem('utente'));
+      const updatedUser = {...actualUserInfo, ...action.user};
+      sessionStorage.removeItem('utente');
+      sessionStorage.setItem('utente', JSON.stringify(updatedUser));
+    }),
+    map(action => AuthActions.updateUser({user: action.user}))
+  ));
+
   signInUser(email: string, password: string): Observable<AuthResponse> {
     return this.http.retrievePostCall<AuthResponse>('users/signIn', {email, password});
   }
