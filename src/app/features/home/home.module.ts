@@ -7,11 +7,10 @@ import {SharedModule} from '../../shared/shared.module';
 import {ClothesFacadeService} from './components/services/clothes-facade.service';
 import { ClotheDetailComponent } from './components/clothe-detail/clothe-detail.component';
 import { ClotheComponent } from './components/clothe/clothe.component';
-import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, ClotheDetailComponent, ClotheComponent, SuccessModalComponent],
+  declarations: [HomeComponent, ClotheDetailComponent, ClotheComponent],
   providers: [ClothesFacadeService],
   imports: [
     CommonModule,
