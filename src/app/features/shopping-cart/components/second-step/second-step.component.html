@@ -19,7 +19,7 @@
         <ul>
           <li (click)="saveUserInfo($event)" id="previous"></li>
           <li class="active"></li>
-          <li [style.pointer-events]="userForm.status === 'INVALID' ? 'none' : 'auto'"></li></ul>
+          <li (click)="saveUserInfo($event)" id="next" [style.pointer-events]="userForm.status === 'INVALID' ? 'none' : 'auto'"></li></ul>
 
         <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10" [disabled]="userForm.status === 'INVALID'">prosegui</button>
       </div>

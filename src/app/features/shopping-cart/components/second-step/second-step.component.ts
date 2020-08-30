@@ -68,8 +68,11 @@ export class SecondStepComponent implements OnInit {
     if (JSON.stringify(this.userForm.value) !== JSON.stringify(userVal)) {
       this.facadeServer.updadeUserInfo(this.userForm.value);
     }
-    if ($event?.submitter?.textContent === 'indietro' || $event.target.attributes.id.nodeValue === 'previous') {
+    if ($event?.submitter?.textContent === 'indietro' || $event?.target?.attributes?.id?.nodeValue === 'previous') {
         this.router.navigateByUrl('/cart/first-step');
       }
+    if ($event?.submitter?.textContent === 'prosegui' || $event?.target?.attributes?.id?.nodeValue === 'next') {
+      this.router.navigateByUrl('/cart/third-step');
+    }
   }
 }
