@@ -51,6 +51,13 @@ export const getCartProducts = createSelector(
   (state: CartState) => state.cart
 );
 
+export const getCartProductsTotalPrice = createSelector(
+  selectShoppingCartState,
+  (state: CartState) => {
+    return state.cart.reduce((total, current, idx) => total += current.prodotto.price, 0);
+  }
+);
+
 export const getCurrentNavigatedClothe = createSelector(
   selectClotheState,
   selectRouteParams,
