@@ -43,3 +43,8 @@ input{
   font-size: medium!important;
   font-weight: 500!important;
 }
+form{
+  button:disabled{
+    opacity: 0.3;
+  }
+}
