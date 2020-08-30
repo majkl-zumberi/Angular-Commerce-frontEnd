@@ -29,4 +29,8 @@
     </form>
   </div>
 </div>
-<div #parent></div>
+<div class="modal" #parent [style.opacity]="!modalVisible ? '0' : '1'" [style.visibility]="!modalVisible ? 'hidden' : 'visible'">
+  <app-modal [modalColor]="'green'" [titleError]="'Aggiunto con Successo!'" [messageError]="'prodotto aggiunto al carrello'" [firstLink]="'/home'" [firstLinkMessage]="'continua a fare Shopping'" [secondLink]="'/cart'" [secondLinkMessage]="'vai al check-out'">
+    <app-success></app-success>
+  </app-modal>
+</div>

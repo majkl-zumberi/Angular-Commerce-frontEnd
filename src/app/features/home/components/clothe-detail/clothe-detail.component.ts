@@ -1,11 +1,11 @@
-import {Component, ComponentFactoryResolver, ComponentRef, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+/* tslint:disable:no-inferrable-types */
+import {Component, ComponentFactoryResolver, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {Dress} from '../../../../core/model/dress.interface';
 import {getCurrentNavigatedClothe} from '../../../../redux';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import {SuccessModalComponent} from '../success-modal/success-modal.component';
 import {CartProduct} from '../../../../core/model/CartProduct.interface';
 import {ClothesFacadeService} from '../services/clothes-facade.service';
 
@@ -18,12 +18,10 @@ export class ClotheDetailComponent implements OnInit {
   image: string;
   customizeForm: FormGroup;
   currentDress: Dress;
-
+  modalVisible: boolean = false;
   get clothe(): Observable<Dress> {
     return this.store.pipe(select(getCurrentNavigatedClothe));
   }
-  @ViewChild('parent', {read: ViewContainerRef}) target: ViewContainerRef;
-  private componentRef: ComponentRef<any>;
 
   constructor(private fb: FormBuilder,
               private store: Store, private route: ActivatedRoute,
@@ -59,6 +57,7 @@ export class ClotheDetailComponent implements OnInit {
   }
 
   addToCart() {
+    this.modalVisible = true;
     console.log('cliccato');
     console.log(this.customizeForm.value);
     console.log(this.currentDress);
@@ -68,8 +67,7 @@ export class ClotheDetailComponent implements OnInit {
       prodotto:  {...this.currentDress}
     };
     this.facadeService.addToCart(cart);
-    const childComponent = this.componentFactoryResolver.resolveComponentFactory(SuccessModalComponent);
-    this.componentRef = this.target.createComponent(childComponent);
+
   }
 
 
