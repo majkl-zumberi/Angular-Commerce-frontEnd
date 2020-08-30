@@ -5,4 +5,10 @@ export interface User {
     lastName?: string;
     firstName?: string;
     exp?: number;
+    phone?: string;
+    city?: string;
+    cap?: number;
+    address?: string;
+    houseNumber?: number;
+    courier?: string;
 }
