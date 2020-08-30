@@ -1,14 +1,14 @@
 <div class="mt-3 border-b-2 border-purple-300 pb-3 flex justify-between">
   <img [src]="cartProduct?.currentImage" />
-  <div class="flex flex-col items-between justify-around">
-    <p class="flex w-1/2 font-thin text-center justify-center">Prodotto
-      <span class="ml-2 font-bold text-left flex "> {{cartProduct?.dressType}}</span></p>
-    <p class="flex w-1/2 font-thin text-center justify-center">Colore
-      <span class="ml-2 font-bold text-left flex "> {{cartProduct?.productColor}}</span></p>
-    <p class="flex w-1/2 font-thin text-center justify-center">Testo
-      <span class="ml-2 font-bold text-left flex "> {{cartProduct?.customText ? cartProduct?.customText : 'Nessuno'}}</span></p>
-    <p class="flex w-1/2 font-thin text-center justify-center">Colore testo
-      <span class="ml-2 font-bold text-left flex "> {{cartProduct?.textColor ? cartProduct?.textColor : 'Nessuno'}}</span></p>
+  <div class="grid grid-cols-3 gap-3 w-full">
+    <div class="col-span-1"> <p class="text-right font-thin">Prodotto</p></div>
+    <div class="col-span-2"> <p class="text-left font-bold">{{cartProduct?.dressType}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin">Colore</p></div>
+    <div class="col-span-2"> <p class="text-left font-bold">{{cartProduct?.productColor}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin">Testo</p></div>
+    <div class="col-span-2"> <p class="text-left font-bold">{{cartProduct?.customText ? cartProduct?.customText : 'Nessuno'}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin">Colore testo</p></div>
+    <div class="col-span-2"> <p class="text-left font-bold">{{cartProduct?.textColor ? cartProduct?.textColor : 'Nessuno'}}</p></div>
   </div>
 
   <div class="flex flex-col items-between justify-between pt-3">

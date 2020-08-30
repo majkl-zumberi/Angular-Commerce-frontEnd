@@ -1,14 +1,12 @@
-<div class=" mt-16 flex  flex-col items-center border-b-2 border-purple-400  pb-4">
-  <p id="sas" class="flex w-1/2 justify-end font-thin text-right">Prodotto
-    <span class="font-bold text-left flex ">{{product}}</span></p>
-
-  <p class=" flex w-1/2 font-thin justify-end text-right">Colore
-    <span class="font-bold  text-left flex">{{productColor}}</span></p>
-
-  <p class="flex w-1/2 font-thin text-right justify-end">Testo
-    <span class="font-bold text-left flex ">{{customText ? customText: 'nessuno'}}</span></p>
-
-  <p class="flex w-1/2 font-thin text-right justify-end">Colore testo
-    <span class="font-bold  text-left  flex">{{customColor ? customColor: 'nessuno'}}</span></p>
-
+<div class="flex justify-center">
+  <div class="mt-16 border-b-2 border-purple-400  pb-4 grid grid-cols-2 gap-3 w-full">
+    <div class="col-span-1"> <p class="text-right font-thin">Prodotto</p></div>
+    <div class="col-span-1"> <p class="text-left font-bold">{{product}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin">Colore</p></div>
+    <div class="col-span-1"> <p class="text-left font-bold">{{productColor}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin">Testo</p></div>
+    <div class="col-span-1"> <p class="text-left font-bold">{{customText ? customText: 'nessuno'}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin">Colore testo</p></div>
+    <div class="col-span-1"> <p class="text-left font-bold">{{customColor ? customColor: 'nessuno'}}</p></div>
+  </div>
 </div>
