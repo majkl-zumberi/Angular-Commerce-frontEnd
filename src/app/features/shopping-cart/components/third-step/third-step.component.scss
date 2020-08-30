@@ -1,0 +1,37 @@
+
+ul.dots{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  li{
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 9999px;
+    cursor: pointer;
+    height: 12px;
+    margin: 0px 4px;
+    width: 12px;
+  }
+}
+
+.active{
+  background-color: #c380fe!important;
+  border: medium none;
+
+
+}
+ejs-textbox,ejs-dropdownlist{
+  background-color: #f3e6ff;
+  padding: 0.5rem;
+}
+input{
+  font-size: medium!important;
+  font-weight: 500!important;
+}
+form{
+  button:disabled{
+    opacity: 0.3;
+  }
+}

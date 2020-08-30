@@ -1,0 +1,35 @@
+<form [formGroup]="summaryForm" (ngSubmit)="saveSummary($event)">
+  <div class="flex flex-col items-center w-full">
+    <div class="-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white">
+      <div class="grid grid-cols-8 gap-4 w-full p-4">
+        <div class="col-span-3"> <p class="text-right font-thin">Prodotti acquistati</p></div>
+        <div class="col-span-5"> <p class="text-left font-bold">{{sizeCart | async }}</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin">Prezzo</p></div>
+        <div class="col-span-5"> <p class="text-left font-bold">{{TotalPrice | async | currency:'EUR':true}}</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin">Spedizione</p></div>
+        <div class="col-span-5"> <p class="text-left font-bold">1&euro;</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin">Indirizzo</p></div>
+        <div class="col-span-5"> <p class="text-left font-bold">{{(userInfo | async)?.user?.address}}</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin">Spedito al sig.</p></div>
+        <div class="col-span-5"> <p class="text-left font-bold">{{(userInfo | async)?.user?.lastName +' ' +(userInfo | async)?.user?.firstName}}</p></div>
+      </div>
+      <div class="grid grid-cols-6 grid-rows-3 gap-4 w-full">
+        <ejs-dropdownlist class="col-span-6" [dataSource]='paymentType' placeholder = 'Scegli metodo di pagamento' formControlName="paymentMethod"></ejs-dropdownlist>
+        <ejs-dropdownlist class="col-span-6" [dataSource]='cardType' placeholder = 'Tipo carta' formControlName="cardType"></ejs-dropdownlist>
+        <ejs-textbox class="col-span-5" placeholder="Numero carta" showClearButton='true' floatLabelType="Auto" formControlName="cardNumber"></ejs-textbox>
+        <ejs-textbox class="col-span-1" placeholder="CVV / CCv" showClearButton='true' floatLabelType="Auto" formControlName="cvv"></ejs-textbox>
+      </div>
+    </div>
+
+    <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3">
+      <button type="submit" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">indietro</button>
+
+      <ul class="dots">
+        <li (click)="saveSummary($event)" id="previous"></li>
+        <li></li>
+        <li class="active"></li></ul>
+
+      <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10" [disabled]="summaryForm.status === 'INVALID'">Acquista</button>
+    </div>
+  </div>
+</form>
