@@ -1,6 +1,6 @@
 import {User} from '../../core/model/user.interface';
 import {Action, createReducer, on} from '@ngrx/store';
-import {initUser, loginUserFailure, signUpUserFailure} from './auth.actions';
+import {initUser, loginUserFailure, signUpUserFailure, updateUser} from './auth.actions';
 
 export interface UserState {
   user: User;
@@ -18,7 +18,7 @@ export const authReducer = createReducer(
   on(initUser, (state, {user}) => ({ ...state, user, errorMessage: null })),
   on(loginUserFailure, (state, {error}) => ({...state, user: null, errorMessage: error})),
   on(signUpUserFailure, (state, {error}) => ({...state, user: null, errorMessage: error})),
-
+  on(updateUser, (state, {user}) => ({...state, user: {...state.user, ...user} }))
 );
 
 export function reducer(state: UserState | undefined, action: Action) {
