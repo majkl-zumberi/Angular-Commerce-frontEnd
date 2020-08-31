@@ -6,6 +6,7 @@ import {selectClothes} from '../../../../redux';
 import {ClothesFacadeService} from '../services/clothes-facade.service';
 import {retrieveAllClothes} from '../../../../redux/clothes/clothes.actions';
 import {Router} from '@angular/router';
+import {retrieveUserInfo} from '../../../../redux/auth/auth.actions';
 
 @Component({
   selector: 'app-clothe',
@@ -28,6 +29,7 @@ export class ClotheComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(retrieveAllClothes());
+    this.store.dispatch(retrieveUserInfo());
   }
 
   showDetail(clothe: Dress, $event: string) {
