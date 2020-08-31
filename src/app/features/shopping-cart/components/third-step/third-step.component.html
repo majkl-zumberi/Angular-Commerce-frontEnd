@@ -9,15 +9,23 @@
         <div class="col-span-3"> <p class="text-right font-thin">Spedizione</p></div>
         <div class="col-span-5"> <p class="text-left font-bold">1&euro;</p></div>
         <div class="col-span-3"> <p class="text-right font-thin">Indirizzo</p></div>
-        <div class="col-span-5"> <p class="text-left font-bold">{{(userInfo | async)?.user?.address}}</p></div>
+        <div class="col-span-5"> <p class="text-left font-bold">{{(userInfo | async)?.user?.address +', '+(userInfo | async)?.user?.houseNumber}} </p></div>
         <div class="col-span-3"> <p class="text-right font-thin">Spedito al sig.</p></div>
         <div class="col-span-5"> <p class="text-left font-bold">{{(userInfo | async)?.user?.lastName +' ' +(userInfo | async)?.user?.firstName}}</p></div>
       </div>
       <div class="grid grid-cols-6 grid-rows-3 gap-4 w-full">
         <ejs-dropdownlist class="col-span-6" [dataSource]='paymentType' placeholder = 'Scegli metodo di pagamento' formControlName="paymentMethod"></ejs-dropdownlist>
         <ejs-dropdownlist class="col-span-6" [dataSource]='cardType' placeholder = 'Tipo carta' formControlName="cardType"></ejs-dropdownlist>
-        <ejs-textbox class="col-span-5" placeholder="Numero carta" showClearButton='true' floatLabelType="Auto" formControlName="cardNumber"></ejs-textbox>
-        <ejs-textbox class="col-span-1" placeholder="CVV / CCv" showClearButton='true' floatLabelType="Auto" formControlName="cvv"></ejs-textbox>
+        <div class="e-float-input e-input-group col-span-5" [ngClass]="{'e-error':cardNumber.errors && cardNumber.touched && cardNumber.dirty, 'e-success':cardNumber.valid}" >
+          <input (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"  formControlName="cardNumber" required/>
+          <span class="e-float-line"></span>
+          <label class="e-float-text">Numero carta</label>
+        </div>
+        <div class="e-float-input e-input-group  col-span-1" [ngClass]="{'e-error':cvv.errors && cvv.touched && cvv.dirty, 'e-success':cvv.valid}">
+          <input (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"  formControlName="cvv" required/>
+          <span class="e-float-line"></span>
+          <label class="e-float-text">CVV / CCv</label>
+        </div>
       </div>
     </div>
 

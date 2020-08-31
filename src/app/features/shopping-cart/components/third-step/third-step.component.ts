@@ -26,6 +26,12 @@ export class ThirdStepComponent implements OnInit {
   get TotalPrice() {
     return this.store.pipe(select(getCartProductsTotalPrice));
   }
+  get cardNumber() {
+    return this.summaryForm.get('cardNumber');
+  }
+  get cvv() {
+    return this.summaryForm.get('cvv');
+  }
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -34,8 +40,8 @@ export class ThirdStepComponent implements OnInit {
     this.summaryForm = this.fb.group({
       paymentMethod: [null, Validators.required],
       cardType: [null, Validators.required],
-      cardNumber: ['', Validators.required],
-      cvv: ['', Validators.required],
+      cardNumber: ['', { validators: [Validators.required, Validators.minLength(13), Validators.pattern('^[0-9]*$'), Validators.maxLength(16)], updateOn: 'blur' }],
+      cvv: ['', { validators: [Validators.required, Validators.minLength(3), Validators.pattern('^[0-9]*$'), Validators.maxLength(3)], updateOn: 'blur' }],
     });
   }
 
@@ -44,5 +50,13 @@ export class ThirdStepComponent implements OnInit {
 
   saveSummary($event: any) {
     console.log(this.summaryForm.value);
+  }
+  public focusIn(target): void {
+    target.parentElement.classList.add('e-input-focus');
+    console.log(target);
+  }
+
+  public focusOut(target): void {
+     target.parentElement.classList.remove('e-input-focus');
   }
 }
