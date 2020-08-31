@@ -31,7 +31,7 @@ export class DressPreviewComponent implements OnInit, AfterViewInit, OnDestroy {
   emitDetail() {
     console.log(this.divView);
     this.divView.nativeElement.firstChild.childNodes.forEach(el => {
-      if (el.className === 'glide__slide glide__slide--active' || el.className === 'glide__slide ng-star-inserted glide__slide--active') {
+      if (el.className === 'glide__slide glide__slide--active' || el.className === 'glide__slide ng-star-inserted glide__slide--active' || el.className === 'glide__slide glide__slide--active ng-star-inserted') {
         console.log('trovato');
         console.log(el.firstChild.attributes.src.value);
         this.detailEvent.emit(el.firstChild.attributes.src.value);
