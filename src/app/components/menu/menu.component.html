@@ -18,7 +18,9 @@
 
       <!--mezzo-->
       <div class="w-1/3 flex justify-center">
-        <h1 class="text-gray-200 text-3xl">Welcome to <b>Lillo.it</b></h1>
+        <h1 *ngIf="currentRoute.includes('/cart'); else detail" class="text-gray-200 text-3xl">{{sizeCart | async}}</h1>
+        <ng-template #detail><h1 *ngIf="currentRoute.includes('/home/detail'); else welcome" class="text-gray-200 text-3xl"><b>Personalizza </b>il tuo prodotto </h1></ng-template>
+        <ng-template #welcome><h1 class="text-gray-200 text-3xl">Welcome to <b>Lillo.it</b></h1></ng-template>
       </div>
 
       <!--destra-->
