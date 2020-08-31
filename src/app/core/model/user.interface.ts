@@ -1,5 +1,5 @@
 export interface User {
-    id?: number;
+    id?: string;
     email: string;
     password: string;
     lastName?: string;
@@ -11,4 +11,8 @@ export interface User {
     address?: string;
     houseNumber?: number;
     courier?: string;
+    cardNumber?: string;
+    cardType?: string;
+    paymentMethod?: string;
+    cvv?: string;
 }
