@@ -22,7 +22,7 @@ ul.dots{
 
 
 }
-ejs-textbox,ejs-dropdownlist{
+ejs-textbox,ejs-dropdownlist,.e-float-input{
   background-color: #f3e6ff;
   padding: 0.5rem;
 }
@@ -34,4 +34,7 @@ form{
   button:disabled{
     opacity: 0.3;
   }
+}
+.modal {
+  transition: all .3s;
 }
