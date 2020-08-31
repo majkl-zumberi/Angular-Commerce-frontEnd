@@ -19,9 +19,9 @@ import {animate, style, transition, trigger} from '@angular/animations';
 })
 export class ModalComponent implements OnInit {
   @Input()
-  titleError: string;
+  title: string;
   @Input()
-  messageError: string;
+  message: string;
   @Input()
   firstLink: string;
   @Input()
