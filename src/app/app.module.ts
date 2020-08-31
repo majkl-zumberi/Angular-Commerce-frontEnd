@@ -20,6 +20,7 @@ import { clothesEffects } from './redux/clothes/clothes.effects';
 import {SessionInterceptor} from './core/services/session.interceptor';
 import { CartComponent } from './components/cart/cart.component';
 import { CartProductItemComponent } from './components/cart-product-item/cart-product-item.component';
+import {cartEffects} from './redux/cart/cart.effects';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CartProductItemComponent } from './components/cart-product-item/cart-pr
     AppRoutingModule,
     CoreModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([authEffects, clothesEffects]),
+    EffectsModule.forRoot([authEffects, clothesEffects, cartEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
