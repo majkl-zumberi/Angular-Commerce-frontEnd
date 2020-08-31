@@ -16,3 +16,9 @@ export const signUpUserFailure = createAction('[Auth] signUp Failure', props<{er
 
 // update
 export const editUser = createAction('[User] edit', props<{user: User}>());
+
+// retrieve
+export const retrieveUserInfo = createAction('[User] retrieve info');
+
+// save To DB
+export const persistUserData = createAction('[user] save user data to db');
