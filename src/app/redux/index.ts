@@ -36,6 +36,11 @@ export const {
   selectUrl,            // select the current url
 } = getSelectors(selectRouter);
 
+export const selectCurrentUser = createSelector(
+  selectUserState,
+  (state: UserState) => state.user
+);
+
 export const selectClothes = createSelector(
   selectClotheState,
   (state: ClothesState) => state.clothes
