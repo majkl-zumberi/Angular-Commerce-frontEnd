@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {removeProductToCart} from '../../../../redux/cart/cart.actions';
+import {performPurchase, removeProductToCart} from '../../../../redux/cart/cart.actions';
 import {User} from '../../../../core/model/user.interface';
-import {editUser} from '../../../../redux/auth/auth.actions';
+import {editUser, persistUserData} from '../../../../redux/auth/auth.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,14 @@ export class ShoppingCartFacadeService {
   }
   updadeUserInfo(user: User) {
     this.store.dispatch(editUser({user}));
+  }
+
+  purchase() {
+    this.store.dispatch(performPurchase());
+  }
+
+  saveUserShippingPaymentInfo() {
+    console.log("poi qui devo salvare le info dell'utente anche sul db");
+    this.store.dispatch(persistUserData());
   }
 }
