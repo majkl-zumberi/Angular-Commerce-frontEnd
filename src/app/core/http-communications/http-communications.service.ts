@@ -18,6 +18,9 @@ export class HttpCommunicationsService {
   retrievePutCall<T>(endpoint: string, body: any): Observable<T> {
     return this.retrieveHttpCall<T>(new HttpRequest<T>('PUT', this.host + endpoint, body));
   }
+  retrievePatchCall<T>(endpoint: string, body: any): Observable<T> {
+    return this.retrieveHttpCall<T>(new HttpRequest<T>('PATCH', this.host + endpoint, body));
+  }
 
   retrieveGetCall<T>(endpoint: string, params: { [key: string]: string } = null): Observable<T> {
     return this.retrieveHttpCall<T>(new HttpRequest<T>('GET', this.host + endpoint, params ? {
