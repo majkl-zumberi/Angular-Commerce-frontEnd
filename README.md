@@ -67,7 +67,7 @@ In altro a destra è visibile il link per l&#39;accesso al carrello, che deve pe
 
 ####
 
-#### ![](RackMultipart20200901-4-b0b9no_html_896df79a864a3d8d.png)
+#### ![](./Template/home.png)
 
 Qui un esempio del carrello aperto con il mouse over
 
