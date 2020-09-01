@@ -71,7 +71,7 @@ In altro a destra è visibile il link per l&#39;accesso al carrello, che deve pe
 
 Qui un esempio del carrello aperto con il mouse over
 
-![](RackMultipart20200901-4-b0b9no_html_6b60aab3eddf7ef.png)
+![](./Template/hoverflow_carrello.png)
 
 #### Personalizzazione elementi
 
@@ -85,7 +85,7 @@ Il tasto Aggiungi al carrello, inserisce il prodotto nel carrello e riporta alla
 
 **Nota:** L&#39;immagine del prodotto può essere statica e non seguire le personalizzazioni indicate a destra, ma deve corrispondere a quella visualizzata nella home quando si è selezionato il prodotto da visualizzare. Inoltre, le personalizzazioni, possono anche essere leggermente diverse in base alla fantasia dello sviluppatore, basta che non riprendano come numero e formato quelle presenti nell&#39;esempio.
 
-![](RackMultipart20200901-4-b0b9no_html_7a07bec9cb900370.png)
+![](./Template/personalizza_prodotto.png)
 
 #### Carrello
 
@@ -95,10 +95,10 @@ Primo Step: Riepilogo del carrello, con i dettagli dei prodotti aggiunti, totale
 
 I pallini in basso indicano gli step per la realizzazione dell&#39;ordine
 
-![](RackMultipart20200901-4-b0b9no_html_723c68ca6489f57f.png)Secondo step: Inserimento dell&#39;indirizzo di spedizione, composto da un semplice form. **Bonus:** permettere di salvare e recuperare gli indirizzi.
+![](./Template/carrello_1.png)Secondo step: Inserimento dell&#39;indirizzo di spedizione, composto da un semplice form. **Bonus:** permettere di salvare e recuperare gli indirizzi.
 
-![](RackMultipart20200901-4-b0b9no_html_8a768590ae9ee4fe.png)
+![](./Template/carrello_2.png)
 
 Terzo step: Riepilogo dei primi due step precedenti e inserimento della carta per pagare. Al click su aggiorna, simulare il pagamento con l&#39;invio di una mail di conferma dove vengono riepilogate le informazioni base. **Bonus** : come per gli indirizzi, permettere il salvataggio e recupero delle carte
 
-![](RackMultipart20200901-4-b0b9no_html_67d2ca3b2c926e8e.png)
+![](./Template/carrello_3.png)
