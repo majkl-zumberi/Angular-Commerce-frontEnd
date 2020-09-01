@@ -10,11 +10,15 @@ import * as AuthActions from '../../redux/auth/auth.actions';
 import * as jwt_decode from 'jwt-decode';
 import {selectCurrentUser} from '../index';
 import {select, Store} from '@ngrx/store';
+import {Router} from '@angular/router';
 
 @Injectable()
 // tslint:disable-next-line:class-name
 export class authEffects {
-  constructor(private action$: Actions, private http: HttpCommunicationsService, private store: Store) {}
+  constructor(private action$: Actions,
+              private http: HttpCommunicationsService,
+              private store: Store,
+              private router: Router) {}
 
   loginUser$ = createEffect(() => this.action$.pipe(
     ofType(AuthActions.loginUser),
@@ -48,6 +52,7 @@ export class authEffects {
     map( (action) => {
       const decoded = jwt_decode(action.token) as User;
       sessionStorage.setItem('utente', JSON.stringify(decoded));
+      this.router.navigateByUrl('/home');
       return authActions.initUser({ user: decoded });
     }),
   ));
