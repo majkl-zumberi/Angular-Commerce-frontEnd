@@ -11,7 +11,7 @@ export class CanActivateAuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (sessionStorage.getItem('utente') !== null || localStorage.getItem('token') !== null) {
+    if (sessionStorage.getItem('utente') !== null && localStorage.getItem('token') !== null) {
       console.log('utente loggato tenta di riloggare');
       this.router.navigateByUrl('/home');
       return false;
