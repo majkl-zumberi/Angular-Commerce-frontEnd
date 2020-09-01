@@ -51,6 +51,11 @@ export const getSizeCart = createSelector (
   (state: CartState) => state.cart.length
 );
 
+export const getModalState = createSelector (
+  selectShoppingCartState,
+  (state: CartState) => state.modalOpen
+);
+
 export const getCartProducts = createSelector(
   selectShoppingCartState,
   (state: CartState) => state.cart
