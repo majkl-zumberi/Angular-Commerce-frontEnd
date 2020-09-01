@@ -84,6 +84,7 @@ export class authEffects {
     map( (action) => {
       const decoded = jwt_decode(action.token) as User;
       sessionStorage.setItem('utente', JSON.stringify(decoded));
+      this.router.navigateByUrl('/home');
       return authActions.initUser({ user: decoded });
     }),
   ));
