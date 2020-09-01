@@ -4,7 +4,7 @@ import {HttpCommunicationsService} from '../../core/http-communications/http-com
 import {switchMap, map, catchError, tap, withLatestFrom} from 'rxjs/operators';
 import {of} from 'rxjs';
 import {select, Store} from '@ngrx/store';
-import {emptyCart, performPurchase} from './cart.actions';
+import {emptyCart, openModal, performPurchase} from './cart.actions';
 import {selectCurrentUser, selectShoppingCartState} from '../index';
 @Injectable()
 // tslint:disable-next-line:class-name
@@ -18,7 +18,7 @@ export class cartEffects {
     tap(action => console.log('sto per fare acquisto')),
     withLatestFrom(this.store.pipe(select(selectCurrentUser)), this.store.pipe(select(selectShoppingCartState))),
     switchMap(([action, user, cart]) => this.postPurchase(cart.cart, user.id).pipe(
-      map(cartSaved => emptyCart())
+      switchMap(cartSaved => [openModal(), emptyCart()])
     ))
   ));
 
