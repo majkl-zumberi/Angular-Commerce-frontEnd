@@ -103,4 +103,8 @@ export class ThirdStepComponent implements OnInit {
   public focusOut(target): void {
      target.parentElement.classList.remove('e-input-focus');
   }
+
+  updateModalStatus() {
+    this.facadeServer.closeModal();
+  }
 }

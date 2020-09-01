@@ -42,7 +42,7 @@
   </div>
 </form>
 <div class="modal" #parent [style.opacity]="!modalVisible ? '0' : '1'" [style.visibility]="!modalVisible ? 'hidden' : 'visible'">
-  <app-modal [modalColor]="'green'" [title]="'Acquisto effettuato con Successo!'" [message]="'ti abbiamo inviato una mail per il riepilogo del tuo ordine'" [firstLink]="'/home'" [firstLinkMessage]="'continua a fare Shopping'">
+  <app-modal (closeModalEvent)="updateModalStatus()" [modalColor]="'green'" [title]="'Acquisto effettuato con Successo!'" [message]="'ti abbiamo inviato una mail per il riepilogo del tuo ordine'" [firstLink]="'/home'" [firstLinkMessage]="'continua a fare Shopping'">
     <app-success></app-success>
   </app-modal>
 </div>
