@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -17,7 +18,7 @@ import {animate, style, transition, trigger} from '@angular/animations';
     ]),
   ]
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
   @Input()
   title: string;
   @Input()
@@ -32,9 +33,11 @@ export class ModalComponent implements OnInit {
   secondLinkMessage: string;
   @Input()
   modalColor: string;
-  constructor() { }
-
-  ngOnInit(): void {
+  @Output()
+  closeModalEvent: EventEmitter<void> = new EventEmitter<void>();
+  constructor(private router: Router) { }
+  closeModalRedirecting(link: string) {
+    this.router.navigateByUrl(link);
+    this.closeModalEvent.emit();
   }
-
 }
