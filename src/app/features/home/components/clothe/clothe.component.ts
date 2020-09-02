@@ -28,8 +28,6 @@ export class ClotheComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(retrieveAllClothes());
-    this.store.dispatch(retrieveUserInfo());
   }
 
   showDetail(clothe: Dress, $event: string) {
