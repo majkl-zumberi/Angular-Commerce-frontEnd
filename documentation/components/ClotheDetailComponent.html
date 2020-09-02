@@ -1,0 +1,810 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-commerce documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-commerce documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ClotheDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/home/components/clothe-detail/clothe-detail.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-clothe-detail</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./clothe-detail.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./clothe-detail.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentDress">currentDress</a>
+                            </li>
+                            <li>
+                                <a href="#customizeForm">customizeForm</a>
+                            </li>
+                            <li>
+                                <a href="#image">image</a>
+                            </li>
+                            <li>
+                                <a href="#modalVisible">modalVisible</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addToCart">addToCart</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#resetForm">resetForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#clothe">clothe</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, store: Store, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, componentFactoryResolver: <a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank">ComponentFactoryResolver</a>, facadeService: <a href="../injectables/ClothesFacadeService.html">ClothesFacadeService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>componentFactoryResolver</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank" >ComponentFactoryResolver</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>facadeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ClothesFacadeService.html" target="_self" >ClothesFacadeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToCart"></a>
+                    <span class="name">
+                        <b>
+                            addToCart
+                        </b>
+                        <a href="#addToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addToCart()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetForm"></a>
+                    <span class="name">
+                        <b>
+                            resetForm
+                        </b>
+                        <a href="#resetForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentDress"></a>
+                        <span class="name">
+                            <b>
+                            currentDress</b>
+                            <a href="#currentDress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Dress.html" target="_self" >Dress</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="customizeForm"></a>
+                        <span class="name">
+                            <b>
+                            customizeForm</b>
+                            <a href="#customizeForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="image"></a>
+                        <span class="name">
+                            <b>
+                            image</b>
+                            <a href="#image"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalVisible"></a>
+                        <span class="name">
+                            <b>
+                            modalVisible</b>
+                            <a href="#modalVisible"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clothe"></a>
+                        <span class="name"><b>clothe</b><a href="#clothe"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>clothe()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/features/home/components/clothe-detail/clothe-detail.component.ts:22</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, ComponentFactoryResolver, OnInit} from &#x27;@angular/core&#x27;;
+import {select, Store} from &#x27;@ngrx/store&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
+import {Dress} from &#x27;../../../../core/model/dress.interface&#x27;;
+import {getCurrentNavigatedClothe} from &#x27;../../../../redux&#x27;;
+import {FormBuilder, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
+import {ActivatedRoute} from &#x27;@angular/router&#x27;;
+import {CartProduct} from &#x27;../../../../core/model/CartProduct.interface&#x27;;
+import {ClothesFacadeService} from &#x27;../services/clothes-facade.service&#x27;;
+
+@Component({
+  selector: &#x27;app-clothe-detail&#x27;,
+  templateUrl: &#x27;./clothe-detail.component.html&#x27;,
+  styleUrls: [&#x27;./clothe-detail.component.scss&#x27;],
+})
+export class ClotheDetailComponent implements OnInit {
+  image: string;
+  customizeForm: FormGroup;
+  currentDress: Dress;
+  modalVisible: boolean &#x3D; false;
+  get clothe(): Observable&lt;Dress&gt; {
+    return this.store.pipe(select(getCurrentNavigatedClothe));
+  }
+
+  constructor(private fb: FormBuilder,
+              private store: Store, private route: ActivatedRoute,
+              private componentFactoryResolver: ComponentFactoryResolver,
+              private facadeService: ClothesFacadeService) {
+     this.image &#x3D; this.route.snapshot.queryParamMap.get(&#x27;img&#x27;);
+     this.customizeForm &#x3D; this.fb.group({
+      productColor: [&#x27;&#x27;, Validators.required],
+      customText: [&#x27;&#x27;],
+      textColor: [&#x27;&#x27;],
+      currentImage: [&#x27;&#x27;],
+      dressType: [&#x27;&#x27;, Validators.required]
+    });
+     this.customizeForm.get(&#x27;customText&#x27;).valueChanges.subscribe(text &#x3D;&gt; {
+      console.log(text);
+      if (text &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+        this.customizeForm.get(&#x27;textColor&#x27;).disable();
+      } else {
+        this.customizeForm.get(&#x27;textColor&#x27;).enable();
+      }
+    });
+     this.customizeForm.get(&#x27;textColor&#x27;).disable();
+     this.clothe.subscribe(clothe &#x3D;&gt; {
+       this.currentDress &#x3D; clothe;
+       console.log(this.currentDress);
+       this.customizeForm.patchValue({
+          currentImage: this.image
+       });
+     });
+  }
+
+  ngOnInit(): void {
+  }
+
+  addToCart() {
+    this.modalVisible &#x3D; true;
+    console.log(&#x27;cliccato&#x27;);
+    console.log(this.customizeForm.value);
+    console.log(this.currentDress);
+    let cart: CartProduct;
+    cart &#x3D; {
+      ...this.customizeForm.value,
+      prodotto:  {...this.currentDress}
+    };
+    this.facadeService.addToCart(cart);
+
+  }
+
+
+  resetForm() {
+    this.customizeForm.patchValue({
+      productColor: &#x27;&#x27;,
+      customText: &#x27;&#x27;,
+      textColor: &#x27;&#x27;,
+      dressType: &#x27;&#x27;
+    });
+    this.customizeForm.reset();
+    this.customizeForm.get(&#x27;textColor&#x27;).disable();
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex flex-col items-center&quot;&gt;
+  &lt;div class&#x3D;&quot;-mt-20 w-1/2 shadow-lg p-2 pb-3 bg-white&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;customizeForm&quot; (ngSubmit)&#x3D;&quot;addToCart()&quot;&gt;
+        &lt;div class&#x3D;&quot;flex w-full sm:flex-col lg:flex-row&quot;&gt;
+          &lt;img class&#x3D;&quot;self-center&quot; [src]&#x3D;&quot;image&quot; alt&#x3D;&quot;product-image&quot;&gt;
+          &lt;div class&#x3D;&quot;flex flex-col p-4 right-side&quot;&gt;
+            &lt;div class&#x3D;&quot;my-2&quot;&gt;
+              &lt;label class&#x3D;&quot;font-bold my-4&quot; for&#x3D;&quot;dressType&quot;&gt;Prodotto&lt;/label&gt;
+                &lt;app-dress-type-picker id&#x3D;&quot;dressType&quot; [dressTypes]&#x3D;&quot;[&#x27;T-shirt&#x27;, &#x27;Felpa&#x27;, &#x27;Tuta&#x27;]&quot; formControlName&#x3D;&quot;dressType&quot;&gt;&lt;/app-dress-type-picker&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label class&#x3D;&quot;font-bold mb-4&quot; for&#x3D;&quot;productColor&quot;&gt;Colore prodotto&lt;/label&gt;
+              &lt;app-color-picker id&#x3D;&quot;productColor&quot; [colors]&#x3D;&quot;[&#x27;red&#x27;, &#x27;orange&#x27;, &#x27;yellow&#x27;, &#x27;green&#x27;, &#x27;lightblue&#x27;, &#x27;blue&#x27;]&quot; formControlName&#x3D;&quot;productColor&quot;&gt;&lt;/app-color-picker&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label class&#x3D;&quot;font-bold mb-4&quot; for&#x3D;&quot;customText&quot;&gt;Testo personalizzato&lt;/label&gt;
+              &lt;input id&#x3D;&quot;customText&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;w-full bg-gray-200 py-3 px-4 placeholder-gray-700&quot; placeholder&#x3D;&#x27;inserisci testo&#x27; formControlName&#x3D;&quot;customText&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label class&#x3D;&quot;font-bold mb-4&quot; for&#x3D;&quot;customTextColor&quot;&gt;Colore prodotto&lt;/label&gt;
+              &lt;app-color-picker id&#x3D;&quot;customTextColor&quot; [colors]&#x3D;&quot;[&#x27;white&#x27;,&#x27;black&#x27;]&quot; formControlName&#x3D;&quot;textColor&quot;&gt;&lt;/app-color-picker&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;flex justify-between&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;resetForm()&quot; class&#x3D;&quot;border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase&quot;&gt;ripristina&lt;/button&gt;
+          &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase&quot; [disabled]&#x3D;&quot;customizeForm.status &#x3D;&#x3D;&#x3D; &#x27;INVALID&#x27;&quot;&gt;aggiungi al carrello&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;modal&quot; #parent [style.opacity]&#x3D;&quot;!modalVisible ? &#x27;0&#x27; : &#x27;1&#x27;&quot; [style.visibility]&#x3D;&quot;!modalVisible ? &#x27;hidden&#x27; : &#x27;visible&#x27;&quot;&gt;
+  &lt;app-modal [modalColor]&#x3D;&quot;&#x27;green&#x27;&quot; [title]&#x3D;&quot;&#x27;Aggiunto con Successo!&#x27;&quot; [message]&#x3D;&quot;&#x27;prodotto aggiunto al carrello&#x27;&quot; [firstLink]&#x3D;&quot;&#x27;/home&#x27;&quot; [firstLinkMessage]&#x3D;&quot;&#x27;continua a fare Shopping&#x27;&quot; [secondLink]&#x3D;&quot;&#x27;/cart&#x27;&quot; [secondLinkMessage]&#x3D;&quot;&#x27;vai al check-out&#x27;&quot;&gt;
+    &lt;app-success&gt;&lt;/app-success&gt;
+  &lt;/app-modal&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./clothe-detail.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">img{
+  width: 20vw!important;
+  max-height: 55vh!important;
+}
+.right-side{
+  justify-content: space-between;
+}
+form{
+  button:disabled{
+    opacity: 0.3;
+  }
+}
+.modal {
+  transition: all .3s;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="flex flex-col items-center">  <div class="-mt-20 w-1/2 shadow-lg p-2 pb-3 bg-white">    <form [formGroup]="customizeForm" (ngSubmit)="addToCart()">        <div class="flex w-full sm:flex-col lg:flex-row">          <img class="self-center" [src]="image" alt="product-image">          <div class="flex flex-col p-4 right-side">            <div class="my-2">              <label class="font-bold my-4" for="dressType">Prodotto</label>                <app-dress-type-picker id="dressType" [dressTypes]="[\'T-shirt\', \'Felpa\', \'Tuta\']" formControlName="dressType"></app-dress-type-picker>            </div>            <div>              <label class="font-bold mb-4" for="productColor">Colore prodotto</label>              <app-color-picker id="productColor" [colors]="[\'red\', \'orange\', \'yellow\', \'green\', \'lightblue\', \'blue\']" formControlName="productColor"></app-color-picker>            </div>            <div>              <label class="font-bold mb-4" for="customText">Testo personalizzato</label>              <input id="customText" type="text" class="w-full bg-gray-200 py-3 px-4 placeholder-gray-700" placeholder=\'inserisci testo\' formControlName="customText" />            </div>            <div>              <label class="font-bold mb-4" for="customTextColor">Colore prodotto</label>              <app-color-picker id="customTextColor" [colors]="[\'white\',\'black\']" formControlName="textColor"></app-color-picker>            </div>          </div>        </div>        <div class="flex justify-between">          <button type="button" (click)="resetForm()" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">ripristina</button>          <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="customizeForm.status === \'INVALID\'">aggiungi al carrello</button>        </div>    </form>  </div></div><div class="modal" #parent [style.opacity]="!modalVisible ? \'0\' : \'1\'" [style.visibility]="!modalVisible ? \'hidden\' : \'visible\'">  <app-modal [modalColor]="\'green\'" [title]="\'Aggiunto con Successo!\'" [message]="\'prodotto aggiunto al carrello\'" [firstLink]="\'/home\'" [firstLinkMessage]="\'continua a fare Shopping\'" [secondLink]="\'/cart\'" [secondLinkMessage]="\'vai al check-out\'">    <app-success></app-success>  </app-modal></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ClotheDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ClotheDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

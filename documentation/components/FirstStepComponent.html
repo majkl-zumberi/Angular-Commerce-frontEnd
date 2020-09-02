@@ -1,0 +1,616 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-commerce documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-commerce documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>FirstStepComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/shopping-cart/components/first-step/first-step.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-first-step</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./first-step.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./first-step.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#removeProductFromCart">removeProductFromCart</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#CartProducts">CartProducts</a>
+                                </li>
+                                <li>
+                                    <a href="#TotalPrice">TotalPrice</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: Store, facadeService: <a href="../injectables/ShoppingCartFacadeService.html">ShoppingCartFacadeService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/features/shopping-cart/components/first-step/first-step.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>facadeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ShoppingCartFacadeService.html" target="_self" >ShoppingCartFacadeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/features/shopping-cart/components/first-step/first-step.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProductFromCart"></a>
+                    <span class="name">
+                        <b>
+                            removeProductFromCart
+                        </b>
+                        <a href="#removeProductFromCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeProductFromCart(product: <a href="../interfaces/CartProduct.html">CartProduct</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/features/shopping-cart/components/first-step/first-step.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                                <code><a href="../interfaces/CartProduct.html" target="_self" >CartProduct</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="CartProducts"></a>
+                        <span class="name"><b>CartProducts</b><a href="#CartProducts"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>CartProducts()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/features/shopping-cart/components/first-step/first-step.component.ts:26</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TotalPrice"></a>
+                        <span class="name"><b>TotalPrice</b><a href="#TotalPrice"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>TotalPrice()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/features/shopping-cart/components/first-step/first-step.component.ts:30</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit } from &#x27;@angular/core&#x27;;
+import {animate, style, transition, trigger} from &#x27;@angular/animations&#x27;;
+import {select, Store} from &#x27;@ngrx/store&#x27;;
+import {getCartProducts, getCartProductsTotalPrice} from &#x27;../../../../redux&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
+import {CartProduct} from &#x27;../../../../core/model/CartProduct.interface&#x27;;
+import {ShoppingCartFacadeService} from &#x27;../services/shopping-cart-facade.service&#x27;;
+
+@Component({
+  selector: &#x27;app-first-step&#x27;,
+  templateUrl: &#x27;./first-step.component.html&#x27;,
+  styleUrls: [&#x27;./first-step.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;fade&#x27;, [
+      transition(&#x27;void &#x3D;&gt; *&#x27;, [
+        style({ opacity: 0 }),
+        animate(500, style({opacity: 1}))
+      ]),
+      transition(&#x27;* &#x3D;&gt; void&#x27;, [
+        animate(200, style({opacity: 0}))
+      ])
+    ]),
+  ]
+})
+export class FirstStepComponent implements OnInit {
+  get CartProducts(): Observable&lt;CartProduct[]&gt; {
+    return this.store.pipe(select(getCartProducts));
+  }
+
+  get TotalPrice() {
+    return this.store.pipe(select(getCartProductsTotalPrice));
+  }
+
+  constructor(private store: Store, private facadeService: ShoppingCartFacadeService) { }
+
+  ngOnInit(): void {
+  }
+
+  removeProductFromCart(product: CartProduct) {
+    this.facadeService.removeProductFromCart(product.prodotto._id);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div  class&#x3D;&quot;flex flex-col items-center w-full&quot;&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;((CartProducts | async) &amp;&amp; (CartProducts | async).length &gt; 0); else emptyCart&quot;&gt;
+      &lt;div class&#x3D;&quot;-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container&quot;&gt;
+        &lt;app-cart-item *ngFor&#x3D;&quot;let product of CartProducts | async&quot; [cartProduct]&#x3D;&quot;product&quot; (deleteEvent)&#x3D;&quot;removeProductFromCart(product)&quot;&gt;&lt;/app-cart-item&gt;
+      &lt;/div&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-template #emptyCart&gt;
+      &lt;div class&#x3D;&quot;border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 bg-white&quot;&gt;
+        &lt;h1 class&#x3D;&quot;text-2xl text-center uppercase font-thin text-center text-gray-600 work-sans leading-normal text-base tracking-normal&quot;&gt;carrello vuoto&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;app-modal [modalColor]&#x3D;&quot;&#x27;orange&#x27;&quot; [title]&#x3D;&quot;&#x27;...Ops!&#x27;&quot; [message]&#x3D;&quot;&#x27;il tuo carrello è vuoto&#x27;&quot; [firstLink]&#x3D;&quot;&#x27;/home&#x27;&quot; [firstLinkMessage]&#x3D;&quot;&#x27;Torna ad Acquistare!&#x27;&quot;&gt;
+        &lt;app-warning&gt;&lt;/app-warning&gt;
+      &lt;/app-modal&gt;
+    &lt;/ng-template&gt;
+
+  &lt;div class&#x3D;&quot;flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3&quot;&gt;
+    &lt;p class&#x3D;&quot;uppercase font-thin text-center text-gray-800 work-sans leading-normal text-base tracking-normal&quot;&gt;Totale &lt;span class&#x3D;&quot;font-bold text-purple-500&quot;&gt;{{TotalPrice | async | currency:&#x27;EUR&#x27;:true }}&lt;/span&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li class&#x3D;&quot;active&quot;&gt;&lt;/li&gt;
+      &lt;li [routerLink]&#x3D;&quot;&#x27;/cart/second-step&#x27;&quot;&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+
+    &lt;button [routerLink]&#x3D;&quot;&#x27;/cart/second-step&#x27;&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10&quot;&gt;prosegui&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./first-step.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">p span {
+
+  padding-left:1rem;
+}
+
+img{
+  width: 15vw!important;
+  max-height: 25vh!important;
+}
+
+.products-container{
+  max-height: 57vh;
+}
+
+ul{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  li{
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 9999px;
+    cursor: pointer;
+    height: 12px;
+    margin: 0px 4px;
+    width: 12px;
+  }
+}
+
+.active{
+  background-color: #c380fe!important;
+  border: medium none;
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  class="flex flex-col items-center w-full">    <ng-container *ngIf="((CartProducts | async) && (CartProducts | async).length > 0); else emptyCart">      <div class="-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container">        <app-cart-item *ngFor="let product of CartProducts | async" [cartProduct]="product" (deleteEvent)="removeProductFromCart(product)"></app-cart-item>      </div>    </ng-container>    <ng-template #emptyCart>      <div class="border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 bg-white">        <h1 class="text-2xl text-center uppercase font-thin text-center text-gray-600 work-sans leading-normal text-base tracking-normal">carrello vuoto</h1>      </div>      <app-modal [modalColor]="\'orange\'" [title]="\'...Ops!\'" [message]="\'il tuo carrello è vuoto\'" [firstLink]="\'/home\'" [firstLinkMessage]="\'Torna ad Acquistare!\'">        <app-warning></app-warning>      </app-modal>    </ng-template>  <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3">    <p class="uppercase font-thin text-center text-gray-800 work-sans leading-normal text-base tracking-normal">Totale <span class="font-bold text-purple-500">{{TotalPrice | async | currency:\'EUR\':true }}</span></p>    <ul>      <li class="active"></li>      <li [routerLink]="\'/cart/second-step\'"></li>      <li></li></ul>    <button [routerLink]="\'/cart/second-step\'" type="button" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10">prosegui</button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FirstStepComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FirstStepComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
