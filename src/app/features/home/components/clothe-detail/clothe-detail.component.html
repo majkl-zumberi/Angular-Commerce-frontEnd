@@ -2,7 +2,7 @@
   <div class="-mt-20 w-1/2 shadow-lg p-2 pb-3 bg-white">
     <form [formGroup]="customizeForm" (ngSubmit)="addToCart()">
         <div class="flex w-full sm:flex-col lg:flex-row">
-          <img class="self-center" [src]="image" alt="product-image">
+          <img class="self-center"  alt="product-image" [src]="'../../../../../assets/img/lillo.it.png'"  [attr.data-src]="image" onload="if(this.src !== this.getAttribute('data-src')) this.src=this.getAttribute('data-src');">
           <div class="flex flex-col p-4 right-side">
             <div class="my-2">
               <label class="font-bold my-4" for="dressType">Prodotto</label>

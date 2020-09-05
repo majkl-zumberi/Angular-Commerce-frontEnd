@@ -3,7 +3,9 @@
   <div class="glide__track" data-glide-el="track" #myDiv>
     <ul class="glide__slides">
       <ng-container *ngFor="let imageLink of dress?.links">
-        <li class="glide__slide"><img [src]="imageLink?.link" [alt]="dress?.name"></li>
+        <li class="glide__slide">
+          <img [src]="'../../../../assets/img/lillo.it.png'" [alt]="dress?.name" [attr.data-src]="imageLink?.link" onload="if(this.src !== this.getAttribute('data-src')) this.src=this.getAttribute('data-src');">
+        </li>
       </ng-container>
      </ul>
   </div>
