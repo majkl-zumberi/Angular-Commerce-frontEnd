@@ -21,11 +21,13 @@ context('login',  () => {
       cy.wrap($form).find('input[type="email"]').first()
         .type('majklzumberi00@gmail.com')
         .should('have.value', 'majklzumberi00@gmail.com')
+        .and('have.attr','placeholder','inserisci email')
         .and('have.focus');
 
       cy.wrap($form).find('input[type="password"]').first()
         .type('test123')
         .should('have.value', 'test123')
+        .and('have.attr','placeholder','inserisci password')
         .and('have.focus');
     })
   });
