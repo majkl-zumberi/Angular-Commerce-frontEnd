@@ -1,3 +1,5 @@
 <div class="flex flex-wrap items-center justify-between p-12">
-  <app-dress-preview *ngFor="let clothe of clothesList | async" [dress]="clothe" (detailEvent)="showDetail(clothe,$event)"></app-dress-preview>
+  <ng-container *ngIf="clothesList | async as clothes">
+    <app-dress-preview *ngFor="let clothe of clothes" [dress]="clothe" (detailEvent)="showDetail(clothe,$event)"></app-dress-preview>
+  </ng-container>
 </div>
