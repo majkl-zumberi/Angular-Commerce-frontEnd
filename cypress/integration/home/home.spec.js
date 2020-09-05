@@ -18,6 +18,6 @@ context('home', () => {
     cy.get('.flex-wrap').children().should('have.length',7)
     cy.get(':nth-child(2) > .text-2xl').should('have.text','Not today')
     cy.get(':nth-child(2) > .flex > .w-full').should('have.text','personalizza ora').click()
-    cy.url().should('include', '/home/detail') // => true
+    cy.url().should('include', '/home/detail')
   });
 });
