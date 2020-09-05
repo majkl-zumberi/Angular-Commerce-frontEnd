@@ -23,3 +23,31 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add('Login',()=>{
+  sessionStorage.removeItem('utente');
+  localStorage.removeItem('token');
+  cy.visit("");
+  cy.url().should('eq', 'http://localhost:4200/auth/login')
+    cy.get('form').within($form => {
+      cy.wrap($form).find('input[type="email"]').first()
+        .type('majklzumberi00@gmail.com')
+        .should('have.value', 'majklzumberi00@gmail.com')
+        .and('have.focus');
+
+      cy.wrap($form).find('input[type="password"]').first()
+        .type('test123')
+        .should('have.value', 'test123')
+        .and('have.focus');
+
+
+    })
+    cy.request('POST', 'http://localhost:3000/users/signIn', { email: 'majklzumberi00@gmail.com',password:"test123" })
+    .then((response) => {
+      // response.body is automatically serialized into JSON
+      expect(response.body).to.have.property('token') // true
+      cy.get('button').last().click();
+      cy.url().should('eq', 'http://localhost:4200/home/clothes');
+    })
+
+
+})
