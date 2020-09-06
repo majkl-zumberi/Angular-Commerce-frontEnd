@@ -108,6 +108,9 @@ context('steps', () => {
     cy.contains('Spedizione')
     cy.contains('Indirizzo')
     cy.contains('Spedito al sig.')
-    cy.get('button').last().should('have.text','acquista').click()
+    cy.get('.flex-col > .flex').find('button').last().should('have.text','Acquista').click()
+    cy.contains('Acquisto effettuato con Successo!')
+    cy.contains('ti abbiamo inviato una mail per il riepilogo del tuo ordine')
+    cy.get('button').last().should('have.text',' continua a fare Shopping ').click();
   });
 });
