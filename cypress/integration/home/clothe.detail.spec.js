@@ -86,7 +86,30 @@ context('', () => {
     })
   });
 
-  it('', () => {
-    
+  it('fills the form', () => {
+    cy.get('#productColor > div').find('span').eq(2).click();// clicco quello giallo
+    cy.get('#dressType > div > :nth-child(2)').click();
+    cy.get('#customText').clear();
+    cy.get('#customText').type('test da cypress')
+    cy.get('#customTextColor > div').find('span').first().click();
+    cy.get('form').within($form=>{
+      cy.wrap($form).find('button').last().should('not.be.disabled').and('have.text','aggiungi al carrello')
+    })
+  });
+  it('reset the form', () => {
+    cy.get('form').find('button').first().should('have.text','ripristina').click()
+    cy.get('form').find('button').last().should('have.text','aggiungi al carrello').and('be.disabled')
+  });
+  it('add to card a dress', () => {
+    cy.get('div.modal').should('not.be.visible');
+    cy.get('#productColor > div').find('span').eq(2).click();// clicco quello giallo
+    cy.get('#dressType > div > :nth-child(2)').click();
+    cy.get('#customText').clear();
+    cy.get('#customText').type('test da cypress')
+    cy.get('#customTextColor > div').find('span').first().click();
+    cy.get('form').find('button').last().click()
+    cy.get('div.modal').should('have.css','opacity', '1');
+    cy.get('div.modal').should('have.css','visibility', 'visible');
+    cy.get('.relative > #text-card > .flex > span').should('have.text','Carrello (1)');
   });
 });
