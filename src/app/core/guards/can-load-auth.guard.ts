@@ -11,7 +11,7 @@ export class CanLoadAuthGuard implements CanLoad {
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    if (sessionStorage.getItem('utente') !== null && localStorage.getItem('token') !== null) {
+    if (sessionStorage.getItem('utente') !== null && localStorage.getItem('token')) {
       this.router.navigateByUrl('/home');
       return false;
     }
