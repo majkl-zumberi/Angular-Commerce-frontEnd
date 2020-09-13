@@ -21,12 +21,7 @@
         <h1 *ngIf="currentRoute.includes('/cart'); else detail" class="text-gray-200 text-3xl">{{sizeCart | async}}</h1>
         <ng-template #detail><h1 *ngIf="currentRoute.includes('/home/detail'); else welcome" class="text-gray-200 text-3xl"><b>Personalizza </b>il tuo prodotto </h1></ng-template>
         <ng-template #welcome><h1 class="text-gray-200 text-3xl">Welcome to <b>Lillo.it</b></h1></ng-template>
-        <svg (click)="toggleTheme()" class="text-3xl" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-          <g fill="#797E95" fill-rule="evenodd">
-            <path fill-rule="nonzero" d="M13.358 4.279c-.449-.612-.845-1.174-1.215-1.687a.777.777 0 0 0-.211-.196.722.722 0 0 0-.951.196c-.343.513-.74 1.051-1.215 1.687-2.087 2.836-5.204 7.115-5.204 9.56 0 1.785.793 3.399 2.06 4.572a7.355 7.355 0 0 0 4.94 1.883 7.257 7.257 0 0 0 4.94-1.907c1.268-1.174 2.06-2.787 2.06-4.572 0-2.445-3.117-6.7-5.204-9.536zm2.397 13.533c-1.083 1.002-2.555 1.593-4.193 1.593a6.243 6.243 0 0 1-4.192-1.593c-1.083-1.003-1.722-2.365-1.722-3.881 0-2.159 3.138-6.45 5.22-9.304.25-.334.472-.668.694-.95.222.282.444.616.694.95 2.083 2.879 5.22 7.145 5.22 9.304 0 1.516-.666 2.878-1.721 3.88z"/>
-            <path d="M5.244 13.127l12.202-1.986.569 2.282-.218 2.374-2.156 2.83-2.922 1.177H9.724l-3.25-2.132-.976-1.726-.254-2.82zm10.512.055c-.135 2.062-.998 3.39-2.616 4.067a.5.5 0 1 0 .386.922c1.984-.83 3.069-2.498 3.227-4.924a.5.5 0 1 0-.997-.065z"/>
-          </g>
-        </svg>
+        <app-theme-toggler></app-theme-toggler>
 
       </div>
 
