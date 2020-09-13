@@ -1,6 +1,6 @@
 .gradient{
-  background: rgb(122,210,248);
-  background: linear-gradient(90deg, rgba(122,210,248,1) 24%, rgba(194,129,254,1) 84%);
+  background: var(--menu-background);
+  background: linear-gradient(var(--menu-gradient));
 }
 #text-card{
   color: white;
