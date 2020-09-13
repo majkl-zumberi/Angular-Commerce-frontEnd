@@ -23,7 +23,7 @@ ul.dots{
 
 }
 ejs-textbox,ejs-dropdownlist,.e-float-input{
-  background-color: #f3e6ff;
+  background-color: var(--input-ejs);
   padding: 0.5rem;
 }
 input{
@@ -37,4 +37,10 @@ form{
 }
 .modal {
   transition: all .3s;
+}
+.container-color{
+  background-color: var(--card-form);
+}
+.text-card{
+  color: var(--text-card);
 }
