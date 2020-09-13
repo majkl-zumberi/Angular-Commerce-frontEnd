@@ -13,3 +13,12 @@ form{
 .modal {
   transition: all .3s;
 }
+.container-color{
+  background-color: var(--background-primary-color);
+}
+.card-form{
+  background-color: var(--card-form);
+  .text-card{
+    color: var(--text-card);
+  }
+}

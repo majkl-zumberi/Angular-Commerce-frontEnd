@@ -1,23 +1,23 @@
-<div class="flex flex-col items-center">
-  <div class="-mt-20 w-1/2 shadow-lg p-2 pb-3 bg-white">
+<div class="flex flex-col items-center container-color">
+  <div class="-mt-20 w-1/2 shadow-lg p-2 pb-3 card-form">
     <form [formGroup]="customizeForm" (ngSubmit)="addToCart()">
         <div class="flex w-full sm:flex-col lg:flex-row">
           <img class="self-center"  alt="product-image" [src]="'../../../../../assets/img/lillo.it.png'"  [attr.data-src]="image" onload="if(this.src !== this.getAttribute('data-src')) this.src=this.getAttribute('data-src');">
           <div class="flex flex-col p-4 right-side">
             <div class="my-2">
-              <label class="font-bold my-4" for="dressType">Prodotto</label>
+              <label class="font-bold my-4 text-card" for="dressType">Prodotto</label>
                 <app-dress-type-picker id="dressType" [dressTypes]="['T-shirt', 'Felpa', 'Tuta']" formControlName="dressType"></app-dress-type-picker>
             </div>
             <div>
-              <label class="font-bold mb-4" for="productColor">Colore prodotto</label>
+              <label class="font-bold mb-4 text-card" for="productColor">Colore prodotto</label>
               <app-color-picker id="productColor" [colors]="['red', 'orange', 'yellow', 'green', 'lightblue', 'blue']" formControlName="productColor"></app-color-picker>
             </div>
             <div>
-              <label class="font-bold mb-4" for="customText">Testo personalizzato</label>
+              <label class="font-bold mb-4 text-card" for="customText">Testo personalizzato</label>
               <input id="customText" type="text" class="w-full bg-gray-200 py-3 px-4 placeholder-gray-700" placeholder='inserisci testo' formControlName="customText" />
             </div>
             <div>
-              <label class="font-bold mb-4" for="customTextColor">Colore testo</label>
+              <label class="font-bold mb-4 text-card" for="customTextColor">Colore testo</label>
               <app-color-picker id="customTextColor" [colors]="['white','black']" formControlName="textColor"></app-color-picker>
             </div>
           </div>
