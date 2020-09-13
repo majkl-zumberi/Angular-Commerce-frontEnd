@@ -1,5 +1,5 @@
 $background-primary-color : #ffffff;
-$background-primary-color-dark: #242428;
+$background-primary-color-dark: #352f44;
 
 $product-text-color:#718096;
 $product-text-color-dark:#d6bcfa;
@@ -8,9 +8,33 @@ $menu-background:rgb(122,210,248);
 $menu-background-dark:rgb(13,37,69);
 $menu-gradient:90deg, rgba(122,210,248,1) 24%, rgba(194,129,254,1) 84%;
 $menu-gradient-dark:90deg, rgba(13,37,69,1) 24%, rgba(111,64,154,1) 84%;
+
+$card-form-color:#ffffff;
+$card-form-color-dark:#2a4365;
+
+$text-card-color:$background-primary-color-dark;
+$text-card-color-dark:#edf2f7;
+
+$syncfusion-input-color:#f3e6ff;
+$syncfusion-input-color-dark:#b0a0cc;
+
+$wave-color1:#8ec5fc;
+$wave-color1-dark: #76a2cd;
+$wave-color2: #e0c3fc;
+$wave-color2-dark: #b8a3d0;
+
+$title-color:#5a67d8;
+$title-color-dark:#dbd8e3;
+
 $colors:(
   --background-primary-color:($background-primary-color,$background-primary-color-dark),
   --product-text:($product-text-color,$product-text-color-dark),
   --menu-background:($menu-background,$menu-background-dark),
-  --menu-gradient:($menu-gradient,$menu-gradient-dark)
+  --menu-gradient:($menu-gradient,$menu-gradient-dark),
+  --card-form:($card-form-color,$card-form-color-dark),
+  --text-card:($text-card-color,$text-card-color-dark),
+  --input-ejs:($syncfusion-input-color,$syncfusion-input-color-dark),
+  --wave-color1:($wave-color1,$wave-color1-dark),
+  --wave-color2:($wave-color2,$wave-color2-dark),
+  --title-color:($title-color,$title-color-dark)
 )
