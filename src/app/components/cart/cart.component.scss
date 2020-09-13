@@ -5,11 +5,14 @@
 #text-card{
   color: white;
 }
+#text-card:hover {
+  background-color: var(--card-form);
+}
 .shopping-cart:hover .shopping-cart-card {
   display: block;
   height:40vh;
   margin: -1.86rem;
-
+  background-color: var(--card-form);
   transition: visibility 0s linear 0s, opacity 1s;
 }
 .shopping-cart:hover{
@@ -17,13 +20,14 @@
     background-color:white;
     width:80%!important;
     border-bottom-width: 8px;
-    border-color: white;
+    border-color: var(--card-form);
 
   }
   app-menu-link > a > span {
     color: #c380fe!important;
   }
   #text-card{
+    background-color: var(--card-form);
     color:#c380fe!important;
     z-index:99;
     span{
@@ -46,4 +50,7 @@ p span {
 }
 #cart{
   margin-right: 1rem;
+}
+.product-text-color{
+  color: var(--product-text);
 }
