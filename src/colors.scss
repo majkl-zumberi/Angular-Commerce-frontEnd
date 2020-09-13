@@ -1,0 +1,16 @@
+$background-primary-color : #ffffff;
+$background-primary-color-dark: #242428;
+
+$product-text-color:#718096;
+$product-text-color-dark:#d6bcfa;
+
+$menu-background:rgb(122,210,248);
+$menu-background-dark:rgb(13,37,69);
+$menu-gradient:90deg, rgba(122,210,248,1) 24%, rgba(194,129,254,1) 84%;
+$menu-gradient-dark:90deg, rgba(13,37,69,1) 24%, rgba(111,64,154,1) 84%;
+$colors:(
+  --background-primary-color:($background-primary-color,$background-primary-color-dark),
+  --product-text:($product-text-color,$product-text-color-dark),
+  --menu-background:($menu-background,$menu-background-dark),
+  --menu-gradient:($menu-gradient,$menu-gradient-dark)
+)
