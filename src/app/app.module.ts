@@ -22,6 +22,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartProductItemComponent } from './components/cart-product-item/cart-product-item.component';
 import {cartEffects} from './redux/cart/cart.effects';
 import {UiModule} from './ui/ui.module';
+import {ThemeTogglerComponent} from './components/theme-toggler/theme-toggler.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {UiModule} from './ui/ui.module';
     MenuComponent,
     MenuLinkComponent,
     CartComponent,
-    CartProductItemComponent
+    CartProductItemComponent,
+    ThemeTogglerComponent
   ],
   imports: [
     BrowserModule,
