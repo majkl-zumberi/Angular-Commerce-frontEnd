@@ -36,7 +36,7 @@ ul{
 
 }
 ejs-textbox{
-  background-color: #f3e6ff;
+  background-color: var(--input-ejs);
   padding: 0.5rem;
 }
 input{
@@ -47,4 +47,7 @@ form{
   button:disabled{
     opacity: 0.3;
   }
+}
+.container-color{
+  background-color: var(--card-form);
 }
