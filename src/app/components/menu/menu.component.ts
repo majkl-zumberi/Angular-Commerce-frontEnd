@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {select, Store} from '@ngrx/store';
 import {getSizeCart} from '../../redux';
 import {map} from 'rxjs/operators';
+import {UiStyleToggleService} from '../../core/services/ui-style-toggle.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit {
     );
   }
   currentRoute = '';
-  constructor(private router: Router, private store: Store) {
+  constructor(private router: Router, private store: Store, private uiService: UiStyleToggleService) {
     // override the route reuse strategy
     this.router.routeReuseStrategy.shouldReuseRoute = function(){
       return false;
@@ -41,5 +42,9 @@ export class MenuComponent implements OnInit {
   }
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
+  toggleTheme() {
+    this.uiService.toggleTheme();
   }
 }
