@@ -21,6 +21,7 @@ import {SessionInterceptor} from './core/services/session.interceptor';
 import { CartComponent } from './components/cart/cart.component';
 import { CartProductItemComponent } from './components/cart-product-item/cart-product-item.component';
 import {cartEffects} from './redux/cart/cart.effects';
+import {UiModule} from './ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {cartEffects} from './redux/cart/cart.effects';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
+    UiModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([authEffects, clothesEffects, cartEffects]),
     StoreDevtoolsModule.instrument({
