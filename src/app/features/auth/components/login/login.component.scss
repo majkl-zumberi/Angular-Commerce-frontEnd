@@ -11,3 +11,12 @@ form{
     opacity: 0.3;
   }
 }
+#color1 {
+  stop-color: var(--wave-color1);
+}
+#color2 {
+  stop-color: var(--wave-color2);
+}
+.title-form{
+  color: var(--title-color);
+}
