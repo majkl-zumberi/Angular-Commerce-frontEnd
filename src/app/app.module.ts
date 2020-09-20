@@ -22,7 +22,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartProductItemComponent } from './components/cart-product-item/cart-product-item.component';
 import {cartEffects} from './redux/cart/cart.effects';
 import {UiModule} from './ui/ui.module';
-import {ThemeTogglerComponent} from './components/theme-toggler/theme-toggler.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
@@ -37,7 +36,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     MenuLinkComponent,
     CartComponent,
     CartProductItemComponent,
-    ThemeTogglerComponent
   ],
   imports: [
     BrowserModule,
