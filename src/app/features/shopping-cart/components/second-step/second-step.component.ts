@@ -5,6 +5,8 @@ import {ShoppingCartFacadeService} from '../services/shopping-cart-facade.servic
 import {select, Store} from '@ngrx/store';
 import {selectUserState} from '../../../../redux';
 import {User} from '../../../../core/model/user.interface';
+import {TranslateService} from '@ngx-translate/core';
+import {combineLatest} from 'rxjs';
 
 @Component({
   selector: 'app-second-step',
@@ -23,7 +25,8 @@ export class SecondStepComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private facadeServer: ShoppingCartFacadeService,
-    private store: Store) {
+    private store: Store,
+    public translate: TranslateService) {
     this.userForm = this.fb.group({
       lastName: ['', Validators.required],
       firstName: ['', Validators.required],
@@ -68,11 +71,14 @@ export class SecondStepComponent implements OnInit {
     if (JSON.stringify(this.userForm.value) !== JSON.stringify(userVal)) {
       this.facadeServer.updadeUserInfo(this.userForm.value);
     }
-    if ($event?.submitter?.textContent === 'indietro' || $event?.target?.attributes?.id?.nodeValue === 'previous') {
-        this.router.navigateByUrl('/cart/first-step');
+    combineLatest(this.translate.get('CART.STEPS.SECOND.CONTINUE'), this.translate.get('CART.STEPS.SECOND.BACK')).subscribe(
+      ([continueVal, backVal]) => {
+        if ($event?.submitter?.textContent === backVal || $event?.target?.attributes?.id?.nodeValue === 'previous') {
+            this.router.navigateByUrl('/cart/first-step');
+          } else if ($event?.submitter?.textContent === continueVal || $event?.target?.attributes?.id?.nodeValue === 'next') {
+          this.router.navigateByUrl('/cart/third-step');
+        }
       }
-    if ($event?.submitter?.textContent === 'prosegui' || $event?.target?.attributes?.id?.nodeValue === 'next') {
-      this.router.navigateByUrl('/cart/third-step');
-    }
+    );
   }
 }
