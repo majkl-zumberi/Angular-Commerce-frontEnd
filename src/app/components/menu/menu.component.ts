@@ -6,7 +6,6 @@ import {select, Store} from '@ngrx/store';
 import {getSizeCart} from '../../redux';
 import {map} from 'rxjs/operators';
 import {UiStyleToggleService} from '../../core/services/ui-style-toggle.service';
-import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -18,11 +17,11 @@ import {TranslateService} from '@ngx-translate/core';
 export class MenuComponent implements OnInit {
   get sizeCart(): Observable<string> {
     return this.store.pipe(select(getSizeCart)).pipe(
-      map(cart => `Carrello (${cart})`)
+      map(cart => `${cart}`)
     );
   }
   currentRoute = '';
-  constructor(private router: Router, private store: Store, private uiService: UiStyleToggleService, public translate: TranslateService) {
+  constructor(private router: Router, private store: Store, private uiService: UiStyleToggleService) {
     // override the route reuse strategy
     this.router.routeReuseStrategy.shouldReuseRoute = function() {
       return false;
@@ -37,11 +36,6 @@ export class MenuComponent implements OnInit {
       // NavigationError
       // RoutesRecognized
     });
-
-    this.translate.addLangs(['it', 'en', 'fr']);
-    this.translate.setDefaultLang('it');
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/it|en|fr/) ? browserLang : 'it');
   }
 
   ngOnInit(): void {
