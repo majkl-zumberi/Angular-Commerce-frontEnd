@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UiStyleToggleService} from '../../core/services/ui-style-toggle.service';
+import {UiStyleToggleService} from '../../../core/services/ui-style-toggle.service';
 
 @Component({
   selector: 'app-theme-toggler',
