@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import { ModalComponent } from './components/modal/modal.component';
 import {WarningComponent} from './svg/warning/warning.component';
 import {SuccessComponent} from './svg/success/success.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 
@@ -28,6 +29,7 @@ import {SuccessComponent} from './svg/success/success.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    TranslateModule
   ],
   exports: [
     CommonModule,
@@ -39,7 +41,8 @@ import {SuccessComponent} from './svg/success/success.component';
     CartItemComponent,
     ModalComponent,
     WarningComponent,
-    SuccessComponent
+    SuccessComponent,
+    TranslateModule
   ]
 })
 export class SharedModule { }
