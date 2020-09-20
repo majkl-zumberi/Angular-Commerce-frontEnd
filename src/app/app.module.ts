@@ -12,7 +12,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {environment} from '../environments/environment';
 import {reducers} from './redux';
 import {authEffects} from './redux/auth/auth.effects';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import {AuthInterceptor} from './core/services/auth.interceptor';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuLinkComponent } from './components/menu-link/menu-link.component';
@@ -23,6 +23,12 @@ import { CartProductItemComponent } from './components/cart-product-item/cart-pr
 import {cartEffects} from './redux/cart/cart.effects';
 import {UiModule} from './ui/ui.module';
 import {ThemeTogglerComponent} from './components/theme-toggler/theme-toggler.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -39,6 +45,13 @@ import {ThemeTogglerComponent} from './components/theme-toggler/theme-toggler.co
     AppRoutingModule,
     CoreModule,
     UiModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        }
+    }),
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([authEffects, clothesEffects, cartEffects]),
     StoreDevtoolsModule.instrument({
