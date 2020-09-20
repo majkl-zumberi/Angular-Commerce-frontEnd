@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   get sizeCart(): Observable<string> {
     return this.store.pipe(select(getSizeCart)).pipe(
-      map(cart => `Carrello (${cart})`)
+      map(cart => `${cart}`)
     );
   }
   get cartProducts(): Observable<CartProduct[]> {
