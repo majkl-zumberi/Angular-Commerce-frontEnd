@@ -13,28 +13,31 @@
     </svg>
 
     <div @fade class="absolute top-0 p-8 flex justify-between  w-full items-center">
-      <h1 class="text-3xl text-indigo-900 uppercase font-bold">lillo.it</h1>
-      <button class="border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium" routerLink="/auth/login">Accedi</button>
+      <div class="flex  justify-evenly items-start">
+        <h1 class="text-3xl text-indigo-900 uppercase font-bold">lillo.it</h1>
+        <app-drop-down-settings></app-drop-down-settings>
+      </div>
+      <button class="border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium" routerLink="/auth/login">{{'AUTH.LOGIN' | translate}}</button>
     </div>
     <form @fade class="absolute mezzo flex flex-col" [formGroup]="signUpForm" (ngSubmit)="signUpUser()">
-      <h1 class="text-5xl title-form font-bold">Registrati</h1>
+      <h1 class="text-5xl title-form font-bold">{{'AUTH.SIGNUP' | translate}}</h1>
       <div @fade class=" flex flex-col bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" *ngIf="signUpError">
-        <strong class="font-bold">Errore</strong>
+        <strong class="font-bold">{{'AUTH.ERROR' | translate}}</strong>
         <span class="block sm:inline">{{ signUpError}}</span>
       </div>
-      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" placeholder="inserisci email" formControlName="email">
+      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" [placeholder]="'AUTH.PLACEHOLDER-Email' | translate" formControlName="email">
       <div formGroupName="pswGroup" class="flex flex-col">
-        <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="inserisci password" formControlName="password">
+        <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" [placeholder]="'AUTH.PLACEHOLDER-Password' | translate" formControlName="password">
         <input [ngClass]="{'uk-form-danger':signUpForm.get('pswGroup').errors ||
                         ((signUpForm.get('pswGroup.passwordCnf').touched ||
                          signUpForm.get('pswGroup.passwordCnf').dirty) &&
                          !signUpForm.get('pswGroup.passwordCnf').valid)}"
-               class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="conferma password" formControlName="passwordCnf">
+               class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" [placeholder]="'AUTH.PLACEHOLDER-Password-Cnf' | translate" formControlName="passwordCnf">
       </div>
         <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mt-2" @fade role="alert" *ngIf="signUpForm.get('pswGroup').errors?.match">
-        <p>le password non coincidono</p>
+        <p>{{'AUTH.PASSWORD-Error' | translate}}</p>
       </div>
-      <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="signUpForm.status === 'INVALID'">Registrati</button>
+      <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="signUpForm.status === 'INVALID'">{{'AUTH.SIGNUP' | translate}}</button>
     </form>
 
   </div>
