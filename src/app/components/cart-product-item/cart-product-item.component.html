@@ -1,12 +1,12 @@
 <div class="flex justify-center">
   <div class="mt-16 border-b-2 border-purple-400  pb-4 grid grid-cols-2 gap-3 w-full">
-    <div class="col-span-1"> <p class="text-right font-thin text-card">Prodotto</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin text-card">{{'HOME.DETAIL.LABELS.PRODUCT' | translate}}</p></div>
     <div class="col-span-1"> <p class="text-left font-bold text-card">{{product}}</p></div>
-    <div class="col-span-1"> <p class="text-right font-thin text-card">Colore</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin text-card">{{'HOME.DETAIL.LABELS.PRODUCT-COLOR' | translate}}</p></div>
     <div class="col-span-1"> <p class="text-left font-bold text-card">{{productColor}}</p></div>
-    <div class="col-span-1"> <p class="text-right font-thin text-card">Testo</p></div>
-    <div class="col-span-1"> <p class="text-left font-bold text-card">{{customText ? customText: 'nessuno'}}</p></div>
-    <div class="col-span-1"> <p class="text-right font-thin text-card">Colore testo</p></div>
-    <div class="col-span-1"> <p class="text-left font-bold text-card">{{customColor ? customColor: 'nessuno'}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin text-card">{{'HOME.DETAIL.LABELS.CUSTOM-TEXT' | translate}}</p></div>
+    <div class="col-span-1"> <p class="text-left font-bold text-card">{{customText ? customText: 'CART.STEPS.FIRST.NONE' | translate}}</p></div>
+    <div class="col-span-1"> <p class="text-right font-thin text-card">{{'HOME.DETAIL.LABELS.TEXT-COLOR' | translate}}</p></div>
+    <div class="col-span-1"> <p class="text-left font-bold text-card">{{customColor ? customColor: 'CART.STEPS.FIRST.NONE' | translate}}</p></div>
   </div>
 </div>
