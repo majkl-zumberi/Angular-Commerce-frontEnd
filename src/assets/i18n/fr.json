@@ -1,10 +1,91 @@
 {
+  "DROPDOWN-UI": {
+    "SELECT": "Choisir la langue",
+    "CHANGE-THEME": "Change le thème"
+  },
   "MENU": {
+    "CUSTOM": "personnalisez",
+    "YOUR-PRODUCT": "votre produit",
     "WELCOME": "Bienvenue à",
     "CART": "Panier ({{value}})",
     "EMPTY-CART": "panier vide"
   },
   "HOME": {
-    "CUSTOMIZE": "personnaliser maintenant"
+    "CUSTOMIZE": "personnaliser maintenant",
+    "DETAIL": {
+      "LABELS": {
+        "PRODUCT": "Produit",
+        "PRODUCT-COLOR": "Couleur du produit",
+        "CUSTOM-TEXT": "Texte personnalisé",
+        "TEXT-COLOR": "Couleur du texte"
+      },
+      "PLACEHOLDER": {
+        "TEXT": "entrez du texte"
+      },
+      "BUTTONS": {
+        "RESET": "restaurer",
+        "ADD": "Ajouter au chariot"
+      },
+      "MODAL": {
+        "title": "Ajouté avec succès!",
+        "message": "produit ajouté au panier",
+        "firstLinkMessage": "continuer à acheter",
+        "secondLinkMessage": "aller à la caisse"
+      }
+    }
+  },
+  "CART": {
+    "STEPS": {
+      "FIRST": {
+        "REMOVE": "retirer",
+        "NONE": "aucun",
+        "CONTINUE": "continuer",
+        "TOTAL": "Total",
+        "MODAL": {
+          "title": "...Ops!",
+          "message": "Votre panier est vide",
+          "firstLinkMessage": "continuer à acheter",
+          "secondLinkMessage": "aller à la caisse"
+        }
+      },
+      "SECOND": {
+        "BACK": "arrière",
+        "CONTINUE": "continuer",
+        "PLACEHOLDERS": {
+          "NAME": "Nom",
+          "SURNAME": "Prénom",
+          "PHONE": "téléphone",
+          "CITY": "Ville",
+          "CAP": "CAP",
+          "ADDRESS": "adresse",
+          "COURIER": "Informations pour le courrier"
+        }
+      },
+      "THIRD": {
+        "BACK": "arrière",
+        "PURCHASE": "acheter",
+        "purchased-products": "Produits achetés",
+        "price": "Prix",
+        "shipping": "livraison",
+        "address": "adresse",
+        "MR": "Envoyé à M.",
+        "cart-number": "Numero carta",
+        "MODAL": {
+          "title": "Acheté avec succès!",
+          "message": "nous vous avons envoyé un mail pour le récapitulatif de votre commande",
+          "firstLinkMessage": "continuer à acheter"
+        }
+      }
+    }
+  },
+  "AUTH": {
+    "TITLE": "Se connecter",
+    "PLACEHOLDER-Email": "entrez l'email",
+    "PLACEHOLDER-Password": "entrer le mot de passe",
+    "PLACEHOLDER-Password-Cnf": "Confirmez le mot de passe",
+    "SIGNUP": "Souscrire",
+    "LOGIN": "Se connecter",
+    "ERROR": "Erreur",
+    "PASSWORD-Error": "les mots de passe ne correspondent pas"
   }
 }

@@ -1,10 +1,91 @@
 {
+  "DROPDOWN-UI": {
+    "SELECT": "Seleziona la lingua",
+    "CHANGE-THEME": "Cambia tema"
+  },
   "MENU": {
+    "CUSTOM": "Personalizza",
+    "YOUR-PRODUCT": "il tuo prodotto",
     "WELCOME": "Benvenuto in",
-    "CART": "Carrello {{value}}",
+    "CART": "Carrello ({{value}})",
     "EMPTY-CART": "carrello vuoto"
   },
   "HOME": {
-    "CUSTOMIZE": "personalizza ora"
+    "CUSTOMIZE": "personalizza ora",
+    "DETAIL": {
+      "LABELS": {
+        "PRODUCT": "Prodotto",
+        "PRODUCT-COLOR": "Colore prodotto",
+        "CUSTOM-TEXT": "Testo personalizzato",
+        "TEXT-COLOR": "Colore testo"
+      },
+      "PLACEHOLDER": {
+        "TEXT": "inserisci testo"
+      },
+      "BUTTONS": {
+        "RESET": "ripristina",
+        "ADD": "aggiungi al carrello"
+      },
+      "MODAL": {
+        "title": "Aggiunto con Successo!",
+        "message": "prodotto aggiunto al carrello",
+        "firstLinkMessage": "continua a fare Shopping",
+        "secondLinkMessage": "vai al check-out"
+      }
+    }
+  },
+  "CART": {
+    "STEPS": {
+      "FIRST": {
+        "REMOVE": "rimuovi",
+        "NONE": "nessuno",
+        "CONTINUE": "prosegui",
+        "TOTAL": "Totale",
+        "MODAL": {
+          "title": "...Ops!",
+          "message": "il tuo carrello è vuoto",
+          "firstLinkMessage": "Torna ad Acquistare",
+          "secondLinkMessage": "vai al check-out"
+        }
+      },
+      "SECOND": {
+        "BACK": "indietro",
+        "CONTINUE": "prosegui",
+        "PLACEHOLDERS": {
+          "NAME": "Nome",
+          "SURNAME": "Cognome",
+          "PHONE": "Cellulare",
+          "CITY": "Città",
+          "CAP": "CAP",
+          "ADDRESS": "Indirizzo",
+          "COURIER": "Informazioni per il corriere"
+        }
+      },
+      "THIRD": {
+        "BACK": "indietro",
+        "PURCHASE": "Acquista",
+        "purchased-products": "Prodotti acquistati",
+        "price": "Prezzo",
+        "shipping": "Spedizione",
+        "address": "Indirizzo",
+        "MR": "Spedito al sig",
+        "cart-number": "Numero carta",
+        "MODAL": {
+          "title": "Acquisto effettuato con Successo!",
+          "message": "ti abbiamo inviato una mail per il riepilogo del tuo ordine",
+          "firstLinkMessage": "continua a fare Shopping"
+        }
+      }
+    }
+  },
+  "AUTH": {
+    "TITLE": "Accedi",
+    "PLACEHOLDER-Email": "inserisci email",
+    "PLACEHOLDER-Password": "inserisci password",
+    "PLACEHOLDER-Password-Cnf": "conferma password",
+    "SIGNUP": "Registrati",
+    "LOGIN": "Accedi",
+    "ERROR": "Errore",
+    "PASSWORD-Error": "le password non coincidono"
   }
 }

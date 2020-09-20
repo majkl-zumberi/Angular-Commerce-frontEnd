@@ -1,10 +1,91 @@
 {
+  "DROPDOWN-UI": {
+    "SELECT": "Select the language",
+    "CHANGE-THEME": "Change theme"
+  },
   "MENU": {
+    "CUSTOM": "Customize",
+    "YOUR-PRODUCT": "your product",
     "WELCOME": "Welcome to",
     "CART": "Cart ({{value}})",
     "EMPTY-CART": "empty cart"
   },
   "HOME": {
-    "CUSTOMIZE": "customize now"
+    "CUSTOMIZE": "customize now",
+    "DETAIL": {
+      "LABELS": {
+        "PRODUCT": "Product",
+        "PRODUCT-COLOR": "Product color",
+        "CUSTOM-TEXT": "Custom text",
+        "TEXT-COLOR": "Text color"
+      },
+      "PLACEHOLDER": {
+        "TEXT": "enter text"
+      },
+      "BUTTONS": {
+        "RESET": "reset",
+        "ADD": "add to cart"
+      },
+      "MODAL": {
+        "title": "Successfully added!",
+        "message": "product added to cart",
+        "firstLinkMessage": "continue purchasing",
+        "secondLinkMessage": "go to checkout"
+      }
+    }
+  },
+  "CART": {
+    "STEPS": {
+      "FIRST": {
+        "REMOVE": "remove",
+        "NONE": "none",
+        "CONTINUE": "continue",
+        "TOTAL": "Total",
+        "MODAL": {
+          "title": "...Ops!",
+          "message": "Your shopping cart is empty",
+          "firstLinkMessage": "continue purchasing",
+          "secondLinkMessage": "go to checkout"
+        }
+      },
+      "SECOND": {
+        "BACK": "previous",
+        "CONTINUE": "continue",
+        "PLACEHOLDERS": {
+          "NAME": "Name",
+          "SURNAME": "Surname",
+          "PHONE": "Phone",
+          "CITY": "City",
+          "CAP": "CAP",
+          "ADDRESS": "Address",
+          "COURIER": "Information for the courier"
+        }
+      },
+      "THIRD": {
+        "BACK": "previous",
+        "PURCHASE": "buy",
+        "purchased-products": "Purchased products",
+        "price": "Price",
+        "shipping": "Shipping",
+        "address": "Address",
+        "MR": "Sent to Mr.",
+        "cart-number": "Numero carta",
+        "MODAL": {
+          "title": "Purchased successfully!",
+          "message": "we have sent you an email for the summary of your order",
+          "firstLinkMessage": "continue purchasing"
+        }
+      }
+    }
+  },
+  "AUTH": {
+    "TITLE": "Login",
+    "PLACEHOLDER-Email": "enter email",
+    "PLACEHOLDER-Password": "enter password",
+    "PLACEHOLDER-Password-Cnf": "confirm password",
+    "SIGNUP": "Sign up",
+    "LOGIN": "Sign In",
+    "ERROR": "Error",
+    "PASSWORD-Error": "Passwords do not match"
   }
 }
