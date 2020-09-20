@@ -4,9 +4,10 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ShoppingCartFacadeService} from '../services/shopping-cart-facade.service';
 import {select, Store} from '@ngrx/store';
-import {Observable} from 'rxjs';
+import {combineLatest, Observable} from 'rxjs';
 import {getCartProductsTotalPrice, getSizeCart, selectUserState} from '../../../../redux';
 import {User} from '../../../../core/model/user.interface';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-third-step',
@@ -39,7 +40,8 @@ export class ThirdStepComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private facadeServer: ShoppingCartFacadeService,
-    private store: Store) {
+    private store: Store,
+    public translate: TranslateService) {
     this.summaryForm = this.fb.group({
       paymentMethod: [null, Validators.required],
       cardType: [null, Validators.required],
@@ -82,18 +84,20 @@ export class ThirdStepComponent implements OnInit {
     if (JSON.stringify(this.summaryForm.value) !== JSON.stringify(user)) {
       this.facadeServer.updadeUserInfo(this.summaryForm.value);
     }
-    if ($event?.submitter?.textContent === 'indietro' || $event?.target?.attributes?.id?.nodeValue === 'backToSecond') {
-      this.router.navigateByUrl('/cart/second-step');
-    }
-    if ($event?.target?.attributes?.id?.nodeValue === 'backToFirst') {
-      this.router.navigateByUrl('/cart/first-step');
-    }
-    if ($event?.submitter?.textContent === 'Acquista') {
-      this.modalVisible = true;
-      // delego al facade l'invio dei prodotti acquistati
-      this.facadeServer.purchase();
-      this.facadeServer.saveUserShippingPaymentInfo();
-    }
+    combineLatest(this.translate.get('CART.STEPS.THIRD.PURCHASE'), this.translate.get('CART.STEPS.THIRD.BACK')).subscribe(
+      ([purchaseVal, backVal]) => {
+          if ($event?.submitter?.textContent === backVal || $event?.target?.attributes?.id?.nodeValue === 'backToSecond') {
+            this.router.navigateByUrl('/cart/second-step');
+          } else if ($event?.target?.attributes?.id?.nodeValue === 'backToFirst') {
+            this.router.navigateByUrl('/cart/first-step');
+          } else if ($event?.submitter?.textContent === purchaseVal) {
+            this.modalVisible = true;
+            // delego al facade l'invio dei prodotti acquistati
+            this.facadeServer.purchase();
+            this.facadeServer.saveUserShippingPaymentInfo();
+          }
+      }
+    );
   }
   public focusIn(target): void {
     target.parentElement.classList.add('e-input-focus');

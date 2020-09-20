@@ -2,15 +2,15 @@
   <div class="flex flex-col items-center w-full">
     <div class="-mt-20 w-3/5 shadow-lg p-2 pb-3 container-color">
       <div class="grid grid-cols-8 gap-4 w-full p-4">
-        <div class="col-span-3"> <p class="text-right font-thin text-card">Prodotti acquistati</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin text-card">{{'CART.STEPS.THIRD.purchased-products' | translate}}</p></div>
         <div class="col-span-5"> <p class="text-left font-bold text-card">{{sizeCart | async }}</p></div>
-        <div class="col-span-3"> <p class="text-right font-thin text-card">Prezzo</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin text-card">{{'CART.STEPS.THIRD.price' | translate}}</p></div>
         <div class="col-span-5"> <p class="text-left font-bold text-card">{{TotalPrice | async | currency:'EUR':true}}</p></div>
-        <div class="col-span-3"> <p class="text-right font-thin text-card">Spedizione</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin text-card">{{'CART.STEPS.THIRD.shipping' | translate}}</p></div>
         <div class="col-span-5"> <p class="text-left font-bold text-card">1&euro;</p></div>
-        <div class="col-span-3"> <p class="text-right font-thin text-card">Indirizzo</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin text-card">{{'CART.STEPS.THIRD.address' | translate}}</p></div>
         <div class="col-span-5"> <p class="text-left font-bold text-card">{{(userInfo | async)?.user?.address +', '+(userInfo | async)?.user?.houseNumber}} </p></div>
-        <div class="col-span-3"> <p class="text-right font-thin text-card">Spedito al sig.</p></div>
+        <div class="col-span-3"> <p class="text-right font-thin text-card">{{'CART.STEPS.THIRD.MR' | translate}}</p></div>
         <div class="col-span-5"> <p class="text-left font-bold text-card">{{(userInfo | async)?.user?.lastName +' ' +(userInfo | async)?.user?.firstName}}</p></div>
       </div>
       <div class="grid grid-cols-6 grid-rows-3 gap-4 w-full">
@@ -19,7 +19,7 @@
         <div class="e-float-input e-input-group col-span-5" [ngClass]="{'e-error':cardNumber.errors && cardNumber.touched && cardNumber.dirty, 'e-success':cardNumber.valid}" >
           <input (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"  formControlName="cardNumber" required/>
           <span class="e-float-line"></span>
-          <label class="e-float-text">Numero carta</label>
+          <label class="e-float-text">{{'CART.STEPS.THIRD.cart-number' | translate}}</label>
         </div>
         <div class="e-float-input e-input-group  col-span-1" [ngClass]="{'e-error':cvv.errors && cvv.touched && cvv.dirty, 'e-success':cvv.valid}">
           <input (focus)="focusIn($event.target)" (blur)="focusOut($event.target)"  formControlName="cvv" required/>
@@ -30,19 +30,19 @@
     </div>
 
     <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3 container-color">
-      <button type="submit" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">indietro</button>
+      <button type="submit" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">{{'CART.STEPS.THIRD.BACK' | translate}}</button>
 
       <ul class="dots">
         <li (click)="saveSummary($event)" id="backToFirst"></li>
         <li (click)="saveSummary($event)" id="backToSecond"></li>
         <li class="active"></li></ul>
 
-      <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10" [disabled]="summaryForm.status === 'INVALID'">Acquista</button>
+      <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10" [disabled]="summaryForm.status === 'INVALID'">{{'CART.STEPS.THIRD.PURCHASE' | translate}}</button>
     </div>
   </div>
 </form>
 <div class="modal" #parent [style.opacity]="!modalVisible ? '0' : '1'" [style.visibility]="!modalVisible ? 'hidden' : 'visible'">
-  <app-modal (closeModalEvent)="updateModalStatus()" [modalColor]="'green'" [title]="'Acquisto effettuato con Successo!'" [message]="'ti abbiamo inviato una mail per il riepilogo del tuo ordine'" [firstLink]="'/home'" [firstLinkMessage]="'continua a fare Shopping'">
+  <app-modal (closeModalEvent)="updateModalStatus()" [modalColor]="'green'" [title]="'CART.STEPS.THIRD.MODAL.title' | translate" [message]="'CART.STEPS.THIRD.MODAL.message' | translate" [firstLink]="'/home'" [firstLinkMessage]="'CART.STEPS.THIRD.MODAL.firstLinkMessage' | translate">
     <app-success></app-success>
   </app-modal>
 </div>
