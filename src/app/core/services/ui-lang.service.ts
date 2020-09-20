@@ -7,13 +7,12 @@ import {TranslateService} from '@ngx-translate/core';
 export class UiLangService {
   constructor(public translate: TranslateService) {
     this.translate.addLangs(['it', 'en', 'fr']);
-    this.translate.setDefaultLang(this.islangSelected());
+    this.translate.setDefaultLang(UiLangService.islangSelected());
     // const browserLang = translate.getBrowserLang();
     translate.use(UiLangService.islangSelected());
   }
   private static islangSelected(): string {
     const lang = localStorage.getItem('lang') ?? 'it';
-    console.log('utilizzo ', lang);
     return lang;
   }
 
