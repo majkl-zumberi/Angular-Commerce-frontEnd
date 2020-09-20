@@ -6,6 +6,7 @@ import {select, Store} from '@ngrx/store';
 import {getSizeCart} from '../../redux';
 import {map} from 'rxjs/operators';
 import {UiStyleToggleService} from '../../core/services/ui-style-toggle.service';
+import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -21,9 +22,9 @@ export class MenuComponent implements OnInit {
     );
   }
   currentRoute = '';
-  constructor(private router: Router, private store: Store, private uiService: UiStyleToggleService) {
+  constructor(private router: Router, private store: Store, private uiService: UiStyleToggleService, public translate: TranslateService) {
     // override the route reuse strategy
-    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+    this.router.routeReuseStrategy.shouldReuseRoute = function() {
       return false;
     };
     this.router.events.subscribe((event: Event) => {
@@ -36,6 +37,11 @@ export class MenuComponent implements OnInit {
       // NavigationError
       // RoutesRecognized
     });
+
+    this.translate.addLangs(['it', 'en', 'fr']);
+    this.translate.setDefaultLang('it');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/it|en|fr/) ? browserLang : 'it');
   }
 
   ngOnInit(): void {
@@ -47,4 +53,5 @@ export class MenuComponent implements OnInit {
   toggleTheme() {
     this.uiService.toggleTheme();
   }
+
 }
