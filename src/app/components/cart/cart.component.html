@@ -1,6 +1,7 @@
 <div class="w-full flex justify-end  relative shopping-cart z-20">
-  <app-menu-link id="text-card" [menuTitle]="this.sizeCart | async" [menuLink]="'/cart'" [resize]="false">
-    <svg id="cart" class="w-8 "  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 426.667 426.667" style="fill: white" xml:space="preserve">
+  <ng-container *ngIf="sizeCart | async as param">
+    <app-menu-link id="text-card" [menuTitle]="'MENU.CART' |translate:{value:param}" [menuLink]="'/cart'" [resize]="false">
+      <svg id="cart" class="w-8 "  xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 426.667 426.667" style="fill: white" xml:space="preserve">
           <g>
             <g>
               <g>
@@ -10,23 +11,24 @@
               </g>
             </g>
           </g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
         </svg>
-  </app-menu-link>
+    </app-menu-link>
+  </ng-container>
   <!--opacity-0 w-1/4 overflow-y-auto-->
   <div class="shopping-cart-card absolute top-0 right-0 bg-white  p-8  shadow-lg h-64  hidden flex flex-col items-center justify-center w-11/12">
     <div class="overflow-y-auto h-full w-full">
@@ -40,7 +42,7 @@
       </ng-container>
         <ng-template #emptyCart>
           <div class="mt-16 flex  flex-col items-center border-b-2 border-purple-400  pb-4">
-            <p class="text-2xl text-center uppercase font-thin text-center product-text-color work-sans leading-normal text-base tracking-normal">carrello vuoto</p>
+            <p class="text-2xl text-center uppercase font-thin text-center product-text-color work-sans leading-normal text-base tracking-normal">{{'MENU.EMPTY-CART' | translate}}</p>
           </div>
         </ng-template>
     </div>
