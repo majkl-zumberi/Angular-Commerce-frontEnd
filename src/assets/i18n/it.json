@@ -1,0 +1,10 @@
+{
+  "MENU": {
+    "WELCOME": "Benvenuto in",
+    "CART": "Carrello {{value}}",
+    "EMPTY-CART": "carrello vuoto"
+  },
+  "HOME": {
+    "CUSTOMIZE": "personalizza ora"
+  }
+}
