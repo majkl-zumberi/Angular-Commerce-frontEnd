@@ -6,21 +6,21 @@
     </ng-container>
     <ng-template #emptyCart>
       <div class="border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 container-color">
-        <h1 class="text-2xl text-center uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal">carrello vuoto</h1>
+        <h1 class="text-2xl text-center uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal">{{'MENU.EMPTY-CART' | translate}}</h1>
       </div>
-      <app-modal [modalColor]="'orange'" [title]="'...Ops!'" [message]="'il tuo carrello è vuoto'" [firstLink]="'/home'" [firstLinkMessage]="'Torna ad Acquistare!'">
+      <app-modal [modalColor]="'orange'" [title]="'...Ops!'" [message]="'CART.STEPS.FIRST.MODAL.message' | translate" [firstLink]="'/home'" [firstLinkMessage]="'CART.STEPS.FIRST.MODAL.firstLinkMessage' | translate">
         <app-warning></app-warning>
       </app-modal>
     </ng-template>
 
   <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3 container-color">
-    <p class="uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal">Totale <span class="font-bold text-purple-500">{{TotalPrice | async | currency:'EUR':true }}</span></p>
+    <p class="uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal">{{'CART.STEPS.FIRST.TOTAL' | translate}} <span class="font-bold text-purple-500">{{TotalPrice | async | currency:'EUR':true }}</span></p>
 
     <ul>
       <li class="active"></li>
       <li [routerLink]="'/cart/second-step'"></li>
       <li></li></ul>
 
-    <button [routerLink]="'/cart/second-step'" type="button" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10">prosegui</button>
+    <button [routerLink]="'/cart/second-step'" type="button" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10">{{'CART.STEPS.FIRST.CONTINUE' | translate}}</button>
   </div>
 </div>
