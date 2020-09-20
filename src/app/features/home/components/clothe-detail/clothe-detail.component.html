@@ -5,32 +5,32 @@
           <img class="self-center"  alt="product-image" [src]="'../../../../../assets/img/lillo.it.png'"  [attr.data-src]="image" onload="if(this.src !== this.getAttribute('data-src')) this.src=this.getAttribute('data-src');">
           <div class="flex flex-col p-4 right-side">
             <div class="my-2">
-              <label class="font-bold my-4 text-card" for="dressType">Prodotto</label>
+              <label class="font-bold my-4 text-card" for="dressType">{{'HOME.DETAIL.LABELS.PRODUCT' | translate}}</label>
                 <app-dress-type-picker id="dressType" [dressTypes]="['T-shirt', 'Felpa', 'Tuta']" formControlName="dressType"></app-dress-type-picker>
             </div>
             <div>
-              <label class="font-bold mb-4 text-card" for="productColor">Colore prodotto</label>
+              <label class="font-bold mb-4 text-card" for="productColor">{{'HOME.DETAIL.LABELS.PRODUCT-COLOR' | translate}}</label>
               <app-color-picker id="productColor" [colors]="['red', 'orange', 'yellow', 'green', 'lightblue', 'blue']" formControlName="productColor"></app-color-picker>
             </div>
             <div>
-              <label class="font-bold mb-4 text-card" for="customText">Testo personalizzato</label>
-              <input id="customText" type="text" class="w-full bg-gray-200 py-3 px-4 placeholder-gray-700" placeholder='inserisci testo' formControlName="customText" />
+              <label class="font-bold mb-4 text-card" for="customText">{{'HOME.DETAIL.LABELS.CUSTOM-TEXT' | translate}}</label>
+              <input id="customText" type="text" class="w-full bg-gray-200 py-3 px-4 placeholder-gray-700" [placeholder]="'HOME.DETAIL.PLACEHOLDER.TEXT' | translate" formControlName="customText" />
             </div>
             <div>
-              <label class="font-bold mb-4 text-card" for="customTextColor">Colore testo</label>
+              <label class="font-bold mb-4 text-card" for="customTextColor">{{'HOME.DETAIL.LABELS.TEXT-COLOR' | translate}}</label>
               <app-color-picker id="customTextColor" [colors]="['white','black']" formControlName="textColor"></app-color-picker>
             </div>
           </div>
         </div>
         <div class="flex justify-between">
-          <button type="button" (click)="resetForm()" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">ripristina</button>
-          <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="customizeForm.status === 'INVALID'">aggiungi al carrello</button>
+          <button type="button" (click)="resetForm()" class="border-2 border-purple-300 text-purple-500 p-2 px-10 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase">{{'HOME.DETAIL.BUTTONS.RESET' | translate}}</button>
+          <button type="submit" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="customizeForm.status === 'INVALID'">{{'HOME.DETAIL.BUTTONS.ADD' | translate}}</button>
         </div>
     </form>
   </div>
 </div>
 <div class="modal" #parent [style.opacity]="!modalVisible ? '0' : '1'" [style.visibility]="!modalVisible ? 'hidden' : 'visible'">
-  <app-modal [modalColor]="'green'" [title]="'Aggiunto con Successo!'" [message]="'prodotto aggiunto al carrello'" [firstLink]="'/home'" [firstLinkMessage]="'continua a fare Shopping'" [secondLink]="'/cart'" [secondLinkMessage]="'vai al check-out'">
+  <app-modal [modalColor]="'green'" [title]="'HOME.DETAIL.MODAL.title' | translate" [message]="'HOME.DETAIL.MODAL.message' | translate" [firstLink]="'/home'" [firstLinkMessage]="'HOME.DETAIL.MODAL.firstLinkMessage' | translate" [secondLink]="'/cart'" [secondLinkMessage]="'HOME.DETAIL.MODAL.secondLinkMessage' | translate">
     <app-success></app-success>
   </app-modal>
 </div>
