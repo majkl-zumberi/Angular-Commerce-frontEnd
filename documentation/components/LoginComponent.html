@@ -643,26 +643,29 @@ export class LoginComponent implements OnInit, OnDestroy {
     &lt;svg @slide viewBox&#x3D;&quot;0 0 500 150&quot; preserveAspectRatio&#x3D;&quot;none&quot; style&#x3D;&quot;height: 100%; width: 100%;&quot;&gt;
       &lt;defs&gt;
         &lt;linearGradient id&#x3D;&quot;myGradient&quot; gradientTransform&#x3D;&quot;rotate(90)&quot;&gt;
-          &lt;stop offset&#x3D;&quot;5%&quot; stop-color&#x3D;&quot;#8ec5fc&quot; /&gt;
-          &lt;stop offset&#x3D;&quot;95%&quot; stop-color&#x3D;&quot;#e0c3fc&quot; /&gt;
+          &lt;stop id&#x3D;&quot;color1&quot; offset&#x3D;&quot;5%&quot; stop-color&#x3D;&quot;#8ec5fc&quot; /&gt;
+          &lt;stop id&#x3D;&quot;color2&quot; offset&#x3D;&quot;95%&quot; stop-color&#x3D;&quot;#e0c3fc&quot; /&gt;
         &lt;/linearGradient&gt;
       &lt;/defs&gt;
       &lt;path d&#x3D;&quot;M208.09,0.00 C152.70,67.10 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z&quot; style&#x3D;&quot;stroke: none; fill: url(&#x27;#myGradient&#x27;);&quot;&gt;&lt;/path&gt;
     &lt;/svg&gt;
 
     &lt;div @fade class&#x3D;&quot;absolute top-0 p-8 flex justify-between  w-full items-center&quot;&gt;
-      &lt;h1 class&#x3D;&quot;text-3xl text-indigo-900 uppercase font-bold&quot;&gt;lillo.it&lt;/h1&gt;
-      &lt;button class&#x3D;&quot;border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium&quot; routerLink&#x3D;&quot;/auth/sign-up&quot;&gt;Registrati&lt;/button&gt;
+      &lt;div class&#x3D;&quot;flex  justify-evenly items-start&quot;&gt;
+        &lt;h1 class&#x3D;&quot;text-3xl text-indigo-900 uppercase font-bold&quot;&gt;lillo.it&lt;/h1&gt;
+        &lt;app-drop-down-settings&gt;&lt;/app-drop-down-settings&gt;
+      &lt;/div&gt;
+      &lt;button class&#x3D;&quot;border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium&quot; routerLink&#x3D;&quot;/auth/sign-up&quot;&gt;{{&#x27;AUTH.SIGNUP&#x27; | translate}}&lt;/button&gt;
     &lt;/div&gt;
     &lt;form @fade class&#x3D;&quot;absolute mezzo flex flex-col&quot; [formGroup]&#x3D;&quot;loginForm&quot; (ngSubmit)&#x3D;&quot;loginUser()&quot;&gt;
-      &lt;h1 class&#x3D;&quot;text-5xl text-indigo-600 font-bold&quot;&gt;Accedi&lt;/h1&gt;
+      &lt;h1 class&#x3D;&quot;text-5xl title-form font-bold&quot;&gt;{{&#x27;AUTH.TITLE&#x27; | translate}}&lt;/h1&gt;
       &lt;div @fade class&#x3D;&quot; flex flex-col bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative&quot; role&#x3D;&quot;alert&quot; *ngIf&#x3D;&quot;loginError&quot;&gt;
-        &lt;strong class&#x3D;&quot;font-bold&quot;&gt;Errore&lt;/strong&gt;
+        &lt;strong class&#x3D;&quot;font-bold&quot;&gt;{{&#x27;AUTH.ERROR&#x27; | translate}}&lt;/strong&gt;
         &lt;span class&#x3D;&quot;block sm:inline&quot;&gt;{{ loginError}}&lt;/span&gt;
       &lt;/div&gt;
-      &lt;input class&#x3D;&quot;py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;inserisci email&quot; formControlName&#x3D;&quot;username&quot;&gt;
-      &lt;input class&#x3D;&quot;py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;inserisci password&quot; formControlName&#x3D;&quot;password&quot;&gt;
-      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase&quot; [disabled]&#x3D;&quot;loginForm.status &#x3D;&#x3D;&#x3D; &#x27;INVALID&#x27;&quot;&gt;Login&lt;/button&gt;
+      &lt;input class&#x3D;&quot;py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600&quot; type&#x3D;&quot;email&quot; [placeholder]&#x3D;&quot;&#x27;AUTH.PLACEHOLDER-Email&#x27; | translate&quot; formControlName&#x3D;&quot;username&quot;&gt;
+      &lt;input class&#x3D;&quot;py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600&quot; type&#x3D;&quot;password&quot; [placeholder]&#x3D;&quot;&#x27;AUTH.PLACEHOLDER-Password&#x27; | translate&quot; formControlName&#x3D;&quot;password&quot;&gt;
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase&quot; [disabled]&#x3D;&quot;loginForm.status &#x3D;&#x3D;&#x3D; &#x27;INVALID&#x27;&quot;&gt;{{&#x27;AUTH.LOGIN&#x27; | translate}}&lt;/button&gt;
     &lt;/form&gt;
 
   &lt;/div&gt;
@@ -687,6 +690,15 @@ form{
   button:disabled{
     opacity: 0.3;
   }
+}
+#color1 {
+  stop-color: var(--wave-color1);
+}
+#color2 {
+  stop-color: var(--wave-color2);
+}
+.title-form{
+  color: var(--title-color);
 }
 </code></pre>
     </div>
@@ -716,8 +728,8 @@ form{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="h-screen flex">  <div class="w-full relative flex">    <svg @slide viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">      <defs>        <linearGradient id="myGradient" gradientTransform="rotate(90)">          <stop offset="5%" stop-color="#8ec5fc" />          <stop offset="95%" stop-color="#e0c3fc" />        </linearGradient>      </defs>      <path d="M208.09,0.00 C152.70,67.10 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: url(\'#myGradient\');"></path>    </svg>    <div @fade class="absolute top-0 p-8 flex justify-between  w-full items-center">      <h1 class="text-3xl text-indigo-900 uppercase font-bold">lillo.it</h1>      <button class="border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium" routerLink="/auth/sign-up">Registrati</button>    </div>    <form @fade class="absolute mezzo flex flex-col" [formGroup]="loginForm" (ngSubmit)="loginUser()">      <h1 class="text-5xl text-indigo-600 font-bold">Accedi</h1>      <div @fade class=" flex flex-col bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" *ngIf="loginError">        <strong class="font-bold">Errore</strong>        <span class="block sm:inline">{{ loginError}}</span>      </div>      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" placeholder="inserisci email" formControlName="username">      <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" placeholder="inserisci password" formControlName="password">      <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="loginForm.status === \'INVALID\'">Login</button>    </form>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
+        var COMPONENT_TEMPLATE = '<div><div class="h-screen flex">  <div class="w-full relative flex">    <svg @slide viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">      <defs>        <linearGradient id="myGradient" gradientTransform="rotate(90)">          <stop id="color1" offset="5%" stop-color="#8ec5fc" />          <stop id="color2" offset="95%" stop-color="#e0c3fc" />        </linearGradient>      </defs>      <path d="M208.09,0.00 C152.70,67.10 262.02,75.98 200.80,150.00 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: url(\'#myGradient\');"></path>    </svg>    <div @fade class="absolute top-0 p-8 flex justify-between  w-full items-center">      <div class="flex  justify-evenly items-start">        <h1 class="text-3xl text-indigo-900 uppercase font-bold">lillo.it</h1>        <app-drop-down-settings></app-drop-down-settings>      </div>      <button class="border-2 bg-indigo-300 p-2 text-indigo-900 hover:bg-purple-300 hover:text-purple-900 rounded transition duration-500 ease-in-out font-medium" routerLink="/auth/sign-up">{{\'AUTH.SIGNUP\' | translate}}</button>    </div>    <form @fade class="absolute mezzo flex flex-col" [formGroup]="loginForm" (ngSubmit)="loginUser()">      <h1 class="text-5xl title-form font-bold">{{\'AUTH.TITLE\' | translate}}</h1>      <div @fade class=" flex flex-col bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" *ngIf="loginError">        <strong class="font-bold">{{\'AUTH.ERROR\' | translate}}</strong>        <span class="block sm:inline">{{ loginError}}</span>      </div>      <input class="py-2 px-4 border rounded mt-8 text-indigo-600  placeholder-indigo-600" type="email" [placeholder]="\'AUTH.PLACEHOLDER-Email\' | translate" formControlName="username">      <input class="py-2 px-4 border rounded mt-4 placeholder-indigo-600 text-indigo-600" type="password" [placeholder]="\'AUTH.PLACEHOLDER-Password\' | translate" formControlName="password">      <button type="submit" class="border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase" [disabled]="loginForm.status === \'INVALID\'">{{\'AUTH.LOGIN\' | translate}}</button>    </form>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'DropDownSettingsComponent', 'selector': 'app-drop-down-settings'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SelectLanguageComponent', 'selector': 'app-select-language'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThemeTogglerComponent', 'selector': 'app-theme-toggler'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

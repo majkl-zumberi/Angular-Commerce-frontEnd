@@ -557,12 +557,14 @@ export class DressPreviewComponent implements OnInit, AfterViewInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h1 class&#x3D;&quot;text-2xl text-center uppercase font-thin text-center text-gray-600 work-sans leading-normal text-base tracking-normal&quot;&gt;{{dress.name}}&lt;/h1&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;h1 class&#x3D;&quot;text-2xl text-center uppercase font-thin text-center product-text-color work-sans leading-normal text-base tracking-normal&quot;&gt;{{dress.name}}&lt;/h1&gt;
 &lt;div class&#x3D;&quot;{{dress?._id}} glide&quot; id&#x3D;&quot;{{dress?._id}}&quot;&gt;
   &lt;div class&#x3D;&quot;glide__track&quot; data-glide-el&#x3D;&quot;track&quot; #myDiv&gt;
     &lt;ul class&#x3D;&quot;glide__slides&quot;&gt;
       &lt;ng-container *ngFor&#x3D;&quot;let imageLink of dress?.links&quot;&gt;
-        &lt;li class&#x3D;&quot;glide__slide&quot;&gt;&lt;img [src]&#x3D;&quot;imageLink?.link&quot; [alt]&#x3D;&quot;dress?.name&quot;&gt;&lt;/li&gt;
+        &lt;li class&#x3D;&quot;glide__slide&quot;&gt;
+          &lt;img [src]&#x3D;&quot;&#x27;../../../../assets/img/lillo.it.png&#x27;&quot; [alt]&#x3D;&quot;dress?.name&quot; [attr.data-src]&#x3D;&quot;imageLink?.link&quot; onload&#x3D;&quot;if(this.src !&#x3D;&#x3D; this.getAttribute(&#x27;data-src&#x27;)) this.src&#x3D;this.getAttribute(&#x27;data-src&#x27;);&quot;&gt;
+        &lt;/li&gt;
       &lt;/ng-container&gt;
      &lt;/ul&gt;
   &lt;/div&gt;
@@ -577,7 +579,7 @@ export class DressPreviewComponent implements OnInit, AfterViewInit, OnDestroy {
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class&#x3D;&quot;flex justify-center items-center&quot;&gt;
-&lt;button class &#x3D;&quot;w-full border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase rounded-md&quot; (click)&#x3D;&quot;emitDetail()&quot;&gt;personalizza ora&lt;/button&gt;
+&lt;button class &#x3D;&quot;w-full border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase rounded-md&quot; (click)&#x3D;&quot;emitDetail()&quot;&gt;{{&#x27;HOME.CUSTOMIZE&#x27; | translate}}&lt;/button&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -592,6 +594,9 @@ export class DressPreviewComponent implements OnInit, AfterViewInit, OnDestroy {
 }
 .glide{
   width: 20vw!important;
+}
+.product-text-color{
+  color: var(--product-text);
 }
 </code></pre>
     </div>
@@ -621,8 +626,8 @@ export class DressPreviewComponent implements OnInit, AfterViewInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1 class="text-2xl text-center uppercase font-thin text-center text-gray-600 work-sans leading-normal text-base tracking-normal">{{dress.name}}</h1><div class="{{dress?._id}} glide" id="{{dress?._id}}">  <div class="glide__track" data-glide-el="track" #myDiv>    <ul class="glide__slides">      <ng-container *ngFor="let imageLink of dress?.links">        <li class="glide__slide"><img [src]="imageLink?.link" [alt]="dress?.name"></li>      </ng-container>     </ul>  </div>  <div class="glide__bullets" data-glide-el="controls[nav]">    <ng-container *ngFor="let link of dress?.links; let indice=index">      <button class="glide__bullet" [attr.data-glide-dir]="\'=\'+indice"></button>    </ng-container>  </div>  <div class="glide__arrows" data-glide-el="controls">    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"> < </button>    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"> > </button>  </div></div><div class="flex justify-center items-center"><button class ="w-full border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase rounded-md" (click)="emitDetail()">personalizza ora</button></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
+        var COMPONENT_TEMPLATE = '<div><h1 class="text-2xl text-center uppercase font-thin text-center product-text-color work-sans leading-normal text-base tracking-normal">{{dress.name}}</h1><div class="{{dress?._id}} glide" id="{{dress?._id}}">  <div class="glide__track" data-glide-el="track" #myDiv>    <ul class="glide__slides">      <ng-container *ngFor="let imageLink of dress?.links">        <li class="glide__slide">          <img [src]="\'../../../../assets/img/lillo.it.png\'" [alt]="dress?.name" [attr.data-src]="imageLink?.link" onload="if(this.src !== this.getAttribute(\'data-src\')) this.src=this.getAttribute(\'data-src\');">        </li>      </ng-container>     </ul>  </div>  <div class="glide__bullets" data-glide-el="controls[nav]">    <ng-container *ngFor="let link of dress?.links; let indice=index">      <button class="glide__bullet" [attr.data-glide-dir]="\'=\'+indice"></button>    </ng-container>  </div>  <div class="glide__arrows" data-glide-el="controls">    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"> < </button>    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"> > </button>  </div></div><div class="flex justify-center items-center"><button class ="w-full border-2 bg-purple-300 p-2 text-purple-900 hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase rounded-md" (click)="emitDetail()">{{\'HOME.CUSTOMIZE\' | translate}}</button></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'DropDownSettingsComponent', 'selector': 'app-drop-down-settings'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SelectLanguageComponent', 'selector': 'app-select-language'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThemeTogglerComponent', 'selector': 'app-theme-toggler'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DressPreviewComponent'};
 </script>

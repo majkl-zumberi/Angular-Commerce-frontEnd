@@ -246,7 +246,13 @@ import {SharedModule} from &#x27;../../shared/shared.module&#x27;;
 import {ClothesFacadeService} from &#x27;./components/services/clothes-facade.service&#x27;;
 import { ClotheDetailComponent } from &#x27;./components/clothe-detail/clothe-detail.component&#x27;;
 import { ClotheComponent } from &#x27;./components/clothe/clothe.component&#x27;;
+import {TranslateLoader, TranslateModule} from &#x27;@ngx-translate/core&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {TranslateHttpLoader} from &#x27;@ngx-translate/http-loader&#x27;;
 
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [HomeComponent, ClotheDetailComponent, ClotheComponent],
@@ -254,7 +260,14 @@ import { ClotheComponent } from &#x27;./components/clothe/clothe.component&#x27;
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ]
 })
 export class HomeModule { }

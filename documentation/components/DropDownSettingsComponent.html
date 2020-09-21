@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>HomeComponent</li>
+  <li>DropDownSettingsComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/features/home/components/main/home.component.ts</code>
+    <code>src/app/ui/components/drop-down-settings/drop-down-settings.component.ts</code>
 </p>
 
 
@@ -91,19 +91,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-home</code></td>
+                <td class="col-md-9"><code>app-drop-down-settings</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./home.component.scss</code></td>
+                <td class="col-md-9"><code>./drop-down-settings.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./home.component.html</code></td>
+                <td class="col-md-9"><code>./drop-down-settings.component.html</code></td>
             </tr>
 
 
@@ -151,45 +151,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: Store)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/features/home/components/main/home.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/ui/components/drop-down-settings/drop-down-settings.component.ts:8</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>store</td>
-                                                  
-                                                        <td>
-                                                                    <code>Store</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -225,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/features/home/components/main/home.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app/ui/components/drop-down-settings/drop-down-settings.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -248,38 +218,52 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
-import {Store} from &#x27;@ngrx/store&#x27;;
-import {retrieveAllClothes} from &#x27;../../../../redux/clothes/clothes.actions&#x27;;
-import {retrieveUserInfo} from &#x27;../../../../redux/auth/auth.actions&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-home&#x27;,
-  templateUrl: &#x27;./home.component.html&#x27;,
-  styleUrls: [&#x27;./home.component.scss&#x27;]
+  selector: &#x27;app-drop-down-settings&#x27;,
+  templateUrl: &#x27;./drop-down-settings.component.html&#x27;,
+  styleUrls: [&#x27;./drop-down-settings.component.scss&#x27;]
 })
-export class HomeComponent implements OnInit {
-  constructor(private store: Store) {
-  }
+export class DropDownSettingsComponent implements OnInit {
+
+  constructor() { }
+
   ngOnInit(): void {
-    this.store.dispatch(retrieveAllClothes());
-    this.store.dispatch(retrieveUserInfo());
   }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;router-outlet&gt;&lt;/router-outlet&gt;
-
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;ml-2 dropdown inline-block relative&quot;&gt;
+  &lt;button class&#x3D;&quot;bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center&quot;&gt;
+    &lt;span class&#x3D;&quot;mr-1&quot;&gt;
+      &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; enable-background&#x3D;&quot;new 0 0 24 24&quot; height&#x3D;&quot;24&quot; viewBox&#x3D;&quot;0 0 24 24&quot; width&#x3D;&quot;24&quot;&gt;&lt;g&gt;&lt;path d&#x3D;&quot;M0,0h24v24H0V0z&quot; fill&#x3D;&quot;none&quot;/&gt;&lt;path d&#x3D;&quot;M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;
+    &lt;/span&gt;
+    &lt;svg class&#x3D;&quot;fill-current h-4 w-4&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 20 20&quot;&gt;&lt;path d&#x3D;&quot;M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z&quot;/&gt; &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;ul class&#x3D;&quot;dropdown-menu absolute hidden text-gray-700 pt-1 z-50&quot;&gt;
+    &lt;li class&#x3D;&quot;&quot;&gt;&lt;a class&#x3D;&quot;flex justify-start items-start rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap&quot;&gt;
+      {{&#x27;DROPDOWN-UI.CHANGE-THEME&#x27; | translate}}&lt;app-theme-toggler&gt;&lt;/app-theme-toggler&gt;
+    &lt;/a&gt;&lt;/li&gt;
+    &lt;li class&#x3D;&quot;&quot;&gt;&lt;a class&#x3D;&quot;bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap&quot;&gt;
+      &lt;app-select-language&gt;&lt;/app-select-language&gt;
+    &lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./home.component.scss</code>
+                    <code>./drop-down-settings.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.dropdown:hover .dropdown-menu {
+  display: block;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -307,10 +291,10 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="ml-2 dropdown inline-block relative">  <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">    <span class="mr-1">      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></g></svg>    </span>    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>  </button>  <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 z-50">    <li class=""><a class="flex justify-start items-start rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">      {{\'DROPDOWN-UI.CHANGE-THEME\' | translate}}<app-theme-toggler></app-theme-toggler>    </a></li>    <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">      <app-select-language></app-select-language>    </a></li>  </ul></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'DropDownSettingsComponent', 'selector': 'app-drop-down-settings'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SelectLanguageComponent', 'selector': 'app-select-language'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThemeTogglerComponent', 'selector': 'app-theme-toggler'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+    var ACTUAL_COMPONENT = {'name': 'DropDownSettingsComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -345,7 +329,7 @@ export class HomeComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DropDownSettingsComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

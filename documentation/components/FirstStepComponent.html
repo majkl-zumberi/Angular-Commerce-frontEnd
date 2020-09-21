@@ -447,28 +447,28 @@ export class FirstStepComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div  class&#x3D;&quot;flex flex-col items-center w-full&quot;&gt;
     &lt;ng-container *ngIf&#x3D;&quot;((CartProducts | async) &amp;&amp; (CartProducts | async).length &gt; 0); else emptyCart&quot;&gt;
-      &lt;div class&#x3D;&quot;-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container&quot;&gt;
+      &lt;div class&#x3D;&quot;-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container container-color&quot;&gt;
         &lt;app-cart-item *ngFor&#x3D;&quot;let product of CartProducts | async&quot; [cartProduct]&#x3D;&quot;product&quot; (deleteEvent)&#x3D;&quot;removeProductFromCart(product)&quot;&gt;&lt;/app-cart-item&gt;
       &lt;/div&gt;
     &lt;/ng-container&gt;
     &lt;ng-template #emptyCart&gt;
-      &lt;div class&#x3D;&quot;border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 bg-white&quot;&gt;
-        &lt;h1 class&#x3D;&quot;text-2xl text-center uppercase font-thin text-center text-gray-600 work-sans leading-normal text-base tracking-normal&quot;&gt;carrello vuoto&lt;/h1&gt;
+      &lt;div class&#x3D;&quot;border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 container-color&quot;&gt;
+        &lt;h1 class&#x3D;&quot;text-2xl text-center uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal&quot;&gt;{{&#x27;MENU.EMPTY-CART&#x27; | translate}}&lt;/h1&gt;
       &lt;/div&gt;
-      &lt;app-modal [modalColor]&#x3D;&quot;&#x27;orange&#x27;&quot; [title]&#x3D;&quot;&#x27;...Ops!&#x27;&quot; [message]&#x3D;&quot;&#x27;il tuo carrello è vuoto&#x27;&quot; [firstLink]&#x3D;&quot;&#x27;/home&#x27;&quot; [firstLinkMessage]&#x3D;&quot;&#x27;Torna ad Acquistare!&#x27;&quot;&gt;
+      &lt;app-modal [modalColor]&#x3D;&quot;&#x27;orange&#x27;&quot; [title]&#x3D;&quot;&#x27;...Ops!&#x27;&quot; [message]&#x3D;&quot;&#x27;CART.STEPS.FIRST.MODAL.message&#x27; | translate&quot; [firstLink]&#x3D;&quot;&#x27;/home&#x27;&quot; [firstLinkMessage]&#x3D;&quot;&#x27;CART.STEPS.FIRST.MODAL.firstLinkMessage&#x27; | translate&quot;&gt;
         &lt;app-warning&gt;&lt;/app-warning&gt;
       &lt;/app-modal&gt;
     &lt;/ng-template&gt;
 
-  &lt;div class&#x3D;&quot;flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3&quot;&gt;
-    &lt;p class&#x3D;&quot;uppercase font-thin text-center text-gray-800 work-sans leading-normal text-base tracking-normal&quot;&gt;Totale &lt;span class&#x3D;&quot;font-bold text-purple-500&quot;&gt;{{TotalPrice | async | currency:&#x27;EUR&#x27;:true }}&lt;/span&gt;&lt;/p&gt;
+  &lt;div class&#x3D;&quot;flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3 container-color&quot;&gt;
+    &lt;p class&#x3D;&quot;uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal&quot;&gt;{{&#x27;CART.STEPS.FIRST.TOTAL&#x27; | translate}} &lt;span class&#x3D;&quot;font-bold text-purple-500&quot;&gt;{{TotalPrice | async | currency:&#x27;EUR&#x27;:true }}&lt;/span&gt;&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li class&#x3D;&quot;active&quot;&gt;&lt;/li&gt;
       &lt;li [routerLink]&#x3D;&quot;&#x27;/cart/second-step&#x27;&quot;&gt;&lt;/li&gt;
       &lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
 
-    &lt;button [routerLink]&#x3D;&quot;&#x27;/cart/second-step&#x27;&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10&quot;&gt;prosegui&lt;/button&gt;
+    &lt;button [routerLink]&#x3D;&quot;&#x27;/cart/second-step&#x27;&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10&quot;&gt;{{&#x27;CART.STEPS.FIRST.CONTINUE&#x27; | translate}}&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -515,6 +515,12 @@ ul{
 
 
 }
+.container-color{
+  background-color: var(--card-form);
+}
+.color{
+  color: var(--product-text);
+}
 </code></pre>
     </div>
 
@@ -543,8 +549,8 @@ ul{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  class="flex flex-col items-center w-full">    <ng-container *ngIf="((CartProducts | async) && (CartProducts | async).length > 0); else emptyCart">      <div class="-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container">        <app-cart-item *ngFor="let product of CartProducts | async" [cartProduct]="product" (deleteEvent)="removeProductFromCart(product)"></app-cart-item>      </div>    </ng-container>    <ng-template #emptyCart>      <div class="border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 bg-white">        <h1 class="text-2xl text-center uppercase font-thin text-center text-gray-600 work-sans leading-normal text-base tracking-normal">carrello vuoto</h1>      </div>      <app-modal [modalColor]="\'orange\'" [title]="\'...Ops!\'" [message]="\'il tuo carrello è vuoto\'" [firstLink]="\'/home\'" [firstLinkMessage]="\'Torna ad Acquistare!\'">        <app-warning></app-warning>      </app-modal>    </ng-template>  <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3">    <p class="uppercase font-thin text-center text-gray-800 work-sans leading-normal text-base tracking-normal">Totale <span class="font-bold text-purple-500">{{TotalPrice | async | currency:\'EUR\':true }}</span></p>    <ul>      <li class="active"></li>      <li [routerLink]="\'/cart/second-step\'"></li>      <li></li></ul>    <button [routerLink]="\'/cart/second-step\'" type="button" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10">prosegui</button>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
+        var COMPONENT_TEMPLATE = '<div><div  class="flex flex-col items-center w-full">    <ng-container *ngIf="((CartProducts | async) && (CartProducts | async).length > 0); else emptyCart">      <div class="-mt-20 w-3/5 shadow-lg p-2 pb-3 bg-white overflow-auto products-container container-color">        <app-cart-item *ngFor="let product of CartProducts | async" [cartProduct]="product" (deleteEvent)="removeProductFromCart(product)"></app-cart-item>      </div>    </ng-container>    <ng-template #emptyCart>      <div class="border-b-2 border-purple-300 pb-3 flex justify-center items-center w-3/5 -mt-20 container-color">        <h1 class="text-2xl text-center uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal">{{\'MENU.EMPTY-CART\' | translate}}</h1>      </div>      <app-modal [modalColor]="\'orange\'" [title]="\'...Ops!\'" [message]="\'CART.STEPS.FIRST.MODAL.message\' | translate" [firstLink]="\'/home\'" [firstLinkMessage]="\'CART.STEPS.FIRST.MODAL.firstLinkMessage\' | translate">        <app-warning></app-warning>      </app-modal>    </ng-template>  <div class="flex justify-between bg-white items-center w-3/5 shadow-lg p-2 pb-3 container-color">    <p class="uppercase font-thin text-center color work-sans leading-normal text-base tracking-normal">{{\'CART.STEPS.FIRST.TOTAL\' | translate}} <span class="font-bold text-purple-500">{{TotalPrice | async | currency:\'EUR\':true }}</span></p>    <ul>      <li class="active"></li>      <li [routerLink]="\'/cart/second-step\'"></li>      <li></li></ul>    <button [routerLink]="\'/cart/second-step\'" type="button" class="border-2 bg-purple-400 p-2 text-white hover:bg-indigo-300 hover:text-indigo-900 rounded transition duration-500 ease-in-out font-bold mt-2 uppercase p-2 px-10">{{\'CART.STEPS.FIRST.CONTINUE\' | translate}}</button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'DropDownSettingsComponent', 'selector': 'app-drop-down-settings'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SelectLanguageComponent', 'selector': 'app-select-language'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThemeTogglerComponent', 'selector': 'app-theme-toggler'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FirstStepComponent'};
 </script>

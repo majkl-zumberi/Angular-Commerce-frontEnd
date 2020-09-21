@@ -247,7 +247,7 @@ export class CanLoadCompsGuard implements CanLoad {
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable&lt;boolean&gt; | Promise&lt;boolean&gt; | boolean {
-    if (sessionStorage.getItem(&#x27;utente&#x27;) !&#x3D;&#x3D; null || localStorage.getItem(&#x27;token&#x27;) !&#x3D;&#x3D; null) {
+    if (sessionStorage.getItem(&#x27;utente&#x27;) !&#x3D;&#x3D; null || localStorage.getItem(&#x27;token&#x27;)) {
       return true;
     } else {
       console.log(&#x27;rimando al login&#x27;);

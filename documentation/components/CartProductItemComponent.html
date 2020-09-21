@@ -359,14 +359,14 @@ export class CartProductItemComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex justify-center&quot;&gt;
   &lt;div class&#x3D;&quot;mt-16 border-b-2 border-purple-400  pb-4 grid grid-cols-2 gap-3 w-full&quot;&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin&quot;&gt;Prodotto&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold&quot;&gt;{{product}}&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin&quot;&gt;Colore&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold&quot;&gt;{{productColor}}&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin&quot;&gt;Testo&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold&quot;&gt;{{customText ? customText: &#x27;nessuno&#x27;}}&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin&quot;&gt;Colore testo&lt;/p&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold&quot;&gt;{{customColor ? customColor: &#x27;nessuno&#x27;}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin text-card&quot;&gt;{{&#x27;HOME.DETAIL.LABELS.PRODUCT&#x27; | translate}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold text-card&quot;&gt;{{product}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin text-card&quot;&gt;{{&#x27;HOME.DETAIL.LABELS.PRODUCT-COLOR&#x27; | translate}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold text-card&quot;&gt;{{productColor}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin text-card&quot;&gt;{{&#x27;HOME.DETAIL.LABELS.CUSTOM-TEXT&#x27; | translate}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold text-card&quot;&gt;{{customText ? customText: &#x27;CART.STEPS.FIRST.NONE&#x27; | translate}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-right font-thin text-card&quot;&gt;{{&#x27;HOME.DETAIL.LABELS.TEXT-COLOR&#x27; | translate}}&lt;/p&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-span-1&quot;&gt; &lt;p class&#x3D;&quot;text-left font-bold text-card&quot;&gt;{{customColor ? customColor: &#x27;CART.STEPS.FIRST.NONE&#x27; | translate}}&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -380,8 +380,8 @@ export class CartProductItemComponent implements OnInit {
   background: rgb(122,210,248);
   background: linear-gradient(90deg, rgba(122,210,248,1) 24%, rgba(194,129,254,1) 84%);
 }
-#text-card{
-  color: white;
+.text-card{
+  color: var(--text-card);
 }
 .shopping-cart:hover .shopping-cart-card {
   display: block;
@@ -453,8 +453,8 @@ p span {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="flex justify-center">  <div class="mt-16 border-b-2 border-purple-400  pb-4 grid grid-cols-2 gap-3 w-full">    <div class="col-span-1"> <p class="text-right font-thin">Prodotto</p></div>    <div class="col-span-1"> <p class="text-left font-bold">{{product}}</p></div>    <div class="col-span-1"> <p class="text-right font-thin">Colore</p></div>    <div class="col-span-1"> <p class="text-left font-bold">{{productColor}}</p></div>    <div class="col-span-1"> <p class="text-right font-thin">Testo</p></div>    <div class="col-span-1"> <p class="text-left font-bold">{{customText ? customText: \'nessuno\'}}</p></div>    <div class="col-span-1"> <p class="text-right font-thin">Colore testo</p></div>    <div class="col-span-1"> <p class="text-left font-bold">{{customColor ? customColor: \'nessuno\'}}</p></div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
+        var COMPONENT_TEMPLATE = '<div><div class="flex justify-center">  <div class="mt-16 border-b-2 border-purple-400  pb-4 grid grid-cols-2 gap-3 w-full">    <div class="col-span-1"> <p class="text-right font-thin text-card">{{\'HOME.DETAIL.LABELS.PRODUCT\' | translate}}</p></div>    <div class="col-span-1"> <p class="text-left font-bold text-card">{{product}}</p></div>    <div class="col-span-1"> <p class="text-right font-thin text-card">{{\'HOME.DETAIL.LABELS.PRODUCT-COLOR\' | translate}}</p></div>    <div class="col-span-1"> <p class="text-left font-bold text-card">{{productColor}}</p></div>    <div class="col-span-1"> <p class="text-right font-thin text-card">{{\'HOME.DETAIL.LABELS.CUSTOM-TEXT\' | translate}}</p></div>    <div class="col-span-1"> <p class="text-left font-bold text-card">{{customText ? customText: \'CART.STEPS.FIRST.NONE\' | translate}}</p></div>    <div class="col-span-1"> <p class="text-right font-thin text-card">{{\'HOME.DETAIL.LABELS.TEXT-COLOR\' | translate}}</p></div>    <div class="col-span-1"> <p class="text-left font-bold text-card">{{customColor ? customColor: \'CART.STEPS.FIRST.NONE\' | translate}}</p></div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartItemComponent', 'selector': 'app-cart-item'},{'name': 'CartProductItemComponent', 'selector': 'app-cart-product-item'},{'name': 'ClotheComponent', 'selector': 'app-clothe'},{'name': 'ClotheDetailComponent', 'selector': 'app-clothe-detail'},{'name': 'ColorPickerComponent', 'selector': 'app-color-picker'},{'name': 'DressPreviewComponent', 'selector': 'app-dress-preview'},{'name': 'DressTypePickerComponent', 'selector': 'app-dress-type-picker'},{'name': 'DropDownSettingsComponent', 'selector': 'app-drop-down-settings'},{'name': 'FirstStepComponent', 'selector': 'app-first-step'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuLinkComponent', 'selector': 'app-menu-link'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'SecondStepComponent', 'selector': 'app-second-step'},{'name': 'SelectLanguageComponent', 'selector': 'app-select-language'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SuccessComponent', 'selector': 'app-success'},{'name': 'ThemeTogglerComponent', 'selector': 'app-theme-toggler'},{'name': 'ThirdStepComponent', 'selector': 'app-third-step'},{'name': 'WarningComponent', 'selector': 'app-warning'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CartProductItemComponent'};
 </script>
