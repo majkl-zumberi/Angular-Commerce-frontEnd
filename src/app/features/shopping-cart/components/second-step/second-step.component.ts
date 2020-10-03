@@ -71,7 +71,7 @@ export class SecondStepComponent implements OnInit {
     if (JSON.stringify(this.userForm.value) !== JSON.stringify(userVal)) {
       this.facadeServer.updadeUserInfo(this.userForm.value);
     }
-    combineLatest(this.translate.get('CART.STEPS.SECOND.CONTINUE'), this.translate.get('CART.STEPS.SECOND.BACK')).subscribe(
+    combineLatest([this.translate.get('CART.STEPS.SECOND.CONTINUE'), this.translate.get('CART.STEPS.SECOND.BACK')]).subscribe(
       ([continueVal, backVal]) => {
         if ($event?.submitter?.textContent === backVal || $event?.target?.attributes?.id?.nodeValue === 'previous') {
             this.router.navigateByUrl('/cart/first-step');
